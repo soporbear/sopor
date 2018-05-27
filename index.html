@@ -310,19 +310,27 @@
       
         
           
-            <p>url编码：</p>
-<ul>
+            <h1 id="先来了解一下MYSQL注入的基本姿势"><a href="#先来了解一下MYSQL注入的基本姿势" class="headerlink" title="先来了解一下MYSQL注入的基本姿势"></a>先来了解一下MYSQL注入的基本姿势</h1><h2 id="url编码："><a href="#url编码：" class="headerlink" title="url编码："></a>url编码：</h2><ul>
 <li>url中只能含有英文字母、阿拉伯数字和某些标点符号，不能使用其他文字和符号，所以要对其编码</li>
 <li>sql注入中常用的url编码有：空格%20，单引号%27，双引号%22,井号%23</li>
 </ul>
-<p>mysql中常用的系统表与函数：</p>
-<ul>
+<h2 id="mysql中常用的系统表与函数："><a href="#mysql中常用的系统表与函数：" class="headerlink" title="mysql中常用的系统表与函数："></a>mysql中常用的系统表与函数：</h2><ul>
 <li>系统数据库information_schema存储数据库元数据，其中的tables存储了数据表的元数据，常用字段：table_schema（数据库名），table_name（数据表名）</li>
-<li>字符连接函数concat<br><img src="/2018/05/27/sqli-libs-1/20180527105405395.png" alt=""></li>
-<li>concat_ws（第一个参数为分隔符）<br><img src="/2018/05/27/sqli-libs-1/20180527105448624.png" alt=""></li>
-<li>group_concat（将多行查询结果连接称一行）<br><img src="/2018/05/27/sqli-libs-1/20180527112925301.png" alt=""></li>
-<li>char函数将ascii码转化成字符<br><img src="/2018/05/27/sqli-libs-1/20180527105906071.png" alt=""></li>
-<li>user函数显示当前用户，database函数显示使用数据库，version函数显示数据库名称和版本<br><img src="/2018/05/27/sqli-libs-1/20180527113036131.png" alt=""></li>
+<li><p>字符连接函数concat</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; select concat(1,2,3,4,5);</span><br><span class="line">+<span class="comment">-------------------+</span></span><br><span class="line">| concat(1,2,3,4,5) |</span><br><span class="line">+<span class="comment">-------------------+</span></span><br><span class="line">| 12345             |</span><br><span class="line">+<span class="comment">-------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>concat_ws（第一个参数为分隔符）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; select concat_ws(':',1,2,3,4,5);</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br><span class="line">| concat_ws(':',1,2,3,4,5) |</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br><span class="line">| 1:2:3:4:5                |</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>group_concat（将多行查询结果连接称一行）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; select group_concat(table_name) from tables where table_schema="security";</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br><span class="line">| group_concat(table_name)      |</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br><span class="line">| emails,referers,uagents,users |</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>char函数将ascii码转化成字符</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; select char(0x23,0x27,41,42,126);</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">| char(0x23,0x27,41,42,126) |</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">| #')*~                     |</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>user函数显示当前用户，database函数显示使用数据库，version函数显示数据库名称和版本</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; select CONCAT_WS(CHAR(32,58,32),user(),database(),version());</span><br><span class="line">+<span class="comment">-------------------------------------------------------+</span></span><br><span class="line">| CONCAT_WS(CHAR(32,58,32),user(),database(),version()) |</span><br><span class="line">+<span class="comment">-------------------------------------------------------+</span></span><br><span class="line">| root@localhost : information_schema : 10.1.32-MariaDB |</span><br><span class="line">+<span class="comment">-------------------------------------------------------+</span></span><br><span class="line">1 row in <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h1 id="LESS-1-基于单引号的注入"><a href="#LESS-1-基于单引号的注入" class="headerlink" title="LESS 1 基于单引号的注入"></a>LESS 1 基于单引号的注入</h1><p>提示以数字id作为参数输入<br>输入id=1：<br>payload：<a href="http://localhost/sqli-labs-master/Less-1/?id=1" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-1/?id=1</a> </p>
 <p>Welcome    Dhakkan<br>Your Login name:Dumb<br>Your Password:Dumb</p>
