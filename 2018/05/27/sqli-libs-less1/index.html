@@ -83,11 +83,11 @@
 <meta name="keywords" content="SQL注入">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqli-labs less1">
-<meta property="og:url" content="http://yoursite.com/2018/05/27/sqli-libs-1/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/sqli-libs-less1/index.html">
 <meta property="og:site_name" content="Lilin">
 <meta property="og:description" content="先来了解一下MYSQL注入的基本姿势url编码： url中只能含有英文字母、阿拉伯数字和某些标点符号，不能使用其他文字和符号，所以要对其编码 sql注入中常用的url编码有：空格%20，单引号%27，双引号%22,井号%23  mysql中常用的系统表与函数： 系统数据库information_schema存储数据库元数据，其中的tables存储了表的元数据，常用字段：table_schema（数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T05:14:28.049Z">
+<meta property="og:updated_time" content="2018-05-29T13:21:08.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqli-labs less1">
 <meta name="twitter:description" content="先来了解一下MYSQL注入的基本姿势url编码： url中只能含有英文字母、阿拉伯数字和某些标点符号，不能使用其他文字和符号，所以要对其编码 sql注入中常用的url编码有：空格%20，单引号%27，双引号%22,井号%23  mysql中常用的系统表与函数： 系统数据库information_schema存储数据库元数据，其中的tables存储了表的元数据，常用字段：table_schema（数">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/27/sqli-libs-1/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/27/sqli-libs-less1/"/>
 
 
 
@@ -201,6 +201,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -243,12 +253,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/sqli-libs-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/27/sqli-libs-less1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -282,6 +292,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL注入</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -322,6 +365,9 @@
 <li><p>concat_ws（第一个参数为分隔符）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">concat_ws</span>(<span class="string">':'</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br><span class="line">| concat_ws(':',1,2,3,4,5) |</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br><span class="line">| 1:2:3:4:5                |</span><br><span class="line">+<span class="comment">--------------------------+</span></span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p>group_concat（将多行查询结果连接称一行）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">group_concat</span>(table_name) <span class="keyword">from</span> <span class="keyword">tables</span> <span class="keyword">where</span> table_schema=<span class="string">"security"</span>;</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br><span class="line">| group_concat(table_name)      |</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br><span class="line">| emails,referers,uagents,users |</span><br><span class="line">+<span class="comment">-------------------------------+</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -412,7 +458,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/28/sqli-lin/" rel="prev" title="sqli-labs less2-7">
+              <a href="/2018/05/28/sqli-labs less2-7/" rel="prev" title="sqli-labs less2-7">
                 sqli-labs less2-7 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -480,6 +526,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/avatar.jpg"
+                alt="Lilin" />
+            
               <p class="site-author-name" itemprop="name">Lilin</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -491,12 +541,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             

