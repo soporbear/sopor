@@ -352,13 +352,56 @@
 
       
         
-          
-            <h1 id="LESS-17-基于错误的UPDATE查询"><a href="#LESS-17-基于错误的UPDATE查询" class="headerlink" title="LESS 17 基于错误的UPDATE查询"></a>LESS 17 基于错误的UPDATE查询</h1><p>源码中的几个php函数：</p>
+          <h1 id="LESS-17-基于错误的UPDATE查询"><a href="#LESS-17-基于错误的UPDATE查询" class="headerlink" title="LESS 17 基于错误的UPDATE查询"></a>LESS 17 基于错误的UPDATE查询</h1><p>源码中的几个php函数：</p>
 <ul>
-<li>get_magic_quotes_gpc():<br>获取</li>
+<li>get_magic_quotes_gpc()</li>
 </ul>
-
-          
+<blockquote>
+<p>magic_quotes_gpc函数在php中的作用是判断解析用户提示的数据，如包括有:post、get、cookie过来的数据增加转义字符“ ”，以确保这些数据不会引起程序，特别是数据库语句因为特殊字符引起的污染而出现致命的错误</p>
+</blockquote>
+<blockquote>
+<p>get_magic_quotes_gpc()就是取得php环境变量magic_quotes_gpc的值</p>
+</blockquote>
+<ul>
+<li>addslashes() &amp; stripslashes()</li>
+</ul>
+<blockquote>
+<p>addslashes() 函数在指定的预定义字符前添加反斜杠：<br>单引号 (‘)，双引号 (“)，反斜杠 ()，NULL</p>
+</blockquote>
+<blockquote>
+<p>stripslashes() 函数删除由 addslashes() 函数添加的反斜杠。</p>
+</blockquote>
+<ul>
+<li>ctype_digit()</li>
+</ul>
+<blockquote>
+<p>检测字符串中的字符是否都是数字，负数和小数会检测不通过，这是验证是否正整数的函数简单方法</p>
+</blockquote>
+<ul>
+<li>mysql_real_escape_string()</li>
+</ul>
+<blockquote>
+<p>mysql_real_escape_string() 函数转义 SQL 语句中使用的字符串中的特殊字符。</p>
+</blockquote>
+<blockquote>
+<p>下列字符受影响：</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>\x00</li>
+<li>\n</li>
+<li>\r</li>
+<li>\</li>
+<li>‘</li>
+<li>“</li>
+<li>\x1a</li></ul></blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/01/sqli-lab-less17-22/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
