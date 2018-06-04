@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="XSS," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="NO.1 WarmupInput:&amp;quot;);alert(1)// NO.2 AdobeInput:\&amp;quot;);alert(1)// 本关对输入的双引号进行了转义，再加一个反斜杠转义回来即可 NO.3 JSONInput:&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1);// 本关使用JSON.stringify()进行过滤，反斜杠也被过滤掉，但可以用scrip">
+<meta name="keywords" content="XSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2018/05/26/hello-world/index.html">
+<meta property="og:title" content="alf.nu&#x2F;alert1 XSS 1-">
+<meta property="og:url" content="http://yoursite.com/2018/06/03/alf.nu-XSS/index.html">
 <meta property="og:site_name" content="Lilin">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="NO.1 WarmupInput:&amp;quot;);alert(1)// NO.2 AdobeInput:\&amp;quot;);alert(1)// 本关对输入的双引号进行了转义，再加一个反斜杠转义回来即可 NO.3 JSONInput:&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1);// 本关使用JSON.stringify()进行过滤，反斜杠也被过滤掉，但可以用scrip">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-26T07:59:45.673Z">
+<meta property="og:updated_time" content="2018-06-04T14:50:31.828Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="alf.nu&#x2F;alert1 XSS 1-">
+<meta name="twitter:description" content="NO.1 WarmupInput:&amp;quot;);alert(1)// NO.2 AdobeInput:\&amp;quot;);alert(1)// 本关对输入的双引号进行了转义，再加一个反斜杠转义回来即可 NO.3 JSONInput:&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1);// 本关使用JSON.stringify()进行过滤，反斜杠也被过滤掉，但可以用scrip">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/26/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/03/alf.nu-XSS/"/>
 
 
 
 
 
-  <title>Hello World | Lilin</title>
+  <title>alf.nu/alert1 XSS 1- | Lilin</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/26/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/alf.nu-XSS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lilin">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">alf.nu/alert1 XSS 1-</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-26T15:59:45+08:00">
-                2018-05-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T13:28:19+08:00">
+                2018-06-03
               </time>
             
 
@@ -291,6 +292,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/" itemprop="url" rel="index">
+                    <span itemprop="name">Web安全</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web安全/XSS/" itemprop="url" rel="index">
+                    <span itemprop="name">XSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -319,16 +353,32 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <h1 id="NO-1-Warmup"><a href="#NO-1-Warmup" class="headerlink" title="NO.1 Warmup"></a>NO.1 Warmup</h1><p>Input:<br><code>&quot;);alert(1)//</code></p>
+<h1 id="NO-2-Adobe"><a href="#NO-2-Adobe" class="headerlink" title="NO.2 Adobe"></a>NO.2 Adobe</h1><p>Input:<br><code>\&quot;);alert(1)//</code></p>
+<p>本关对输入的双引号进行了转义，再加一个反斜杠转义回来即可</p>
+<h1 id="NO-3-JSON"><a href="#NO-3-JSON" class="headerlink" title="NO.3 JSON"></a>NO.3 JSON</h1><p>Input:<br><code>&lt;/script&gt;&lt;script&gt;alert(1);//</code></p>
+<p>本关使用JSON.stringify()进行过滤，反斜杠也被过滤掉，但可以用script标签进行分割</p>
+<h1 id="NO-4-JavaScript"><a href="#NO-4-JavaScript" class="headerlink" title="NO.4 JavaScript"></a>NO.4 JavaScript</h1><p>Input:<br><code>%22);alert(1)//</code><br><a id="more"></a></p>
+<hr>
+<blockquote>
+<p>javascript伪协议：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0)"</span>&gt;</span>Content<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>当浏览器装载这样的URL时，它将执行这个URL中包含的Javascript代码，并把最后一条javascript语句的字符串值作为新文档的内容显示出来。这个字符串可以含有HTML标记，并被格式化，其显示与其他装载进浏览器的文档类型完全相同</p>
+</blockquote>
+<p>因为最后传递到url中所以用url编码绕过</p>
+<h1 id="NO-5-Markdown"><a href="#NO-5-Markdown" class="headerlink" title="NO.5 Markdown"></a>NO.5 Markdown</h1><p>Input:<br><code>[[1|http://onerror=&#39;alert(1)&#39;]]</code></p>
+<hr>
+<p>本题主要考察正则有关知识<br>先是过滤掉了小于号和双引号，然后<br>“<code>[[1|http://onerror=&#39;alert(1)&#39;]]</code>“.replace(/(http:\/\/\S+)/g, ‘<a href="$1">$1</a>‘);<br>结果为：<br><code>[[1|&lt;a href=&quot;http://onerror=&#39;alert(1)&#39;]]&quot;&gt;http://onerror=&#39;alert(1)&#39;]]&lt;/a&gt;</code><br>然后<br>“<code>[[1|&lt;a href=&quot;http://onerror=&#39;alert(1)&#39;]]&quot;&gt;http://onerror=&#39;alert(1)&#39;]]&lt;/a&gt;</code>“.text = text.replace(/[[(\w+)|(.+?)]]/g, ‘<code>&lt;img alt=&quot;$2&quot; src=&quot;$1.gif&quot;&gt;</code>‘);<br>结果：<code>&lt;img alt=&quot;&lt;a href=&quot;http://onerror=&#39;alert(1)&#39;&quot; src=&quot;1.gif&quot;&gt;&quot;&gt;http://onerror=&#39;alert(1)&#39;]]&lt;/a&gt;</code></p>
+<p>注意这里要用onerror而不是onload因为图片注定会加载失败</p>
+<h1 id="NO-6-DOM"><a href="#NO-6-DOM" class="headerlink" title="NO.6 DOM"></a>NO.6 DOM</h1><p>Input:<br><code>Comment# --&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;!--</code> </p>
+<hr>
+<p>Function.apply(obj,args):</p>
+<blockquote>
+<p>obj：这个对象将代替Function类里this对象<br>args：这个是数组，它将作为参数传给Function（args–&gt;arguments）<br>apply方法能劫持另外一个对象的方法，继承另外一个对象的属性</p>
+</blockquote>
+<p>先用document.createComment()创建注释，然后再绕过注释</p>
+<h1 id="NO-7-Callback"><a href="#NO-7-Callback" class="headerlink" title="NO.7 Callback"></a>NO.7 Callback</h1>
       
     </div>
     
@@ -343,6 +393,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/XSS/" rel="tag"># XSS</a>
+          
+        </div>
+      
 
       
       
@@ -352,15 +408,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/01/sqli-lab-less17-22/" rel="next" title="sqli-labs less17-20">
+                <i class="fa fa-chevron-left"></i> sqli-labs less17-20
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/27/文件系统/" rel="prev" title="文件系统概要">
-                文件系统概要 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,7 +568,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NO-1-Warmup"><span class="nav-number">1.</span> <span class="nav-text">NO.1 Warmup</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NO-2-Adobe"><span class="nav-number">2.</span> <span class="nav-text">NO.2 Adobe</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NO-3-JSON"><span class="nav-number">3.</span> <span class="nav-text">NO.3 JSON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NO-4-JavaScript"><span class="nav-number">4.</span> <span class="nav-text">NO.4 JavaScript</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NO-5-Markdown"><span class="nav-number">5.</span> <span class="nav-text">NO.5 Markdown</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NO-6-DOM"><span class="nav-number">6.</span> <span class="nav-text">NO.6 DOM</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NO-7-Callback"><span class="nav-number">7.</span> <span class="nav-text">NO.7 Callback</span></a></li></ol></div>
             
 
           </div>
