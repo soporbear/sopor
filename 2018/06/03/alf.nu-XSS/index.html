@@ -82,14 +82,14 @@
 <meta name="description" content="NO.1 WarmupInput:&amp;quot;);alert(1)// NO.2 AdobeInput:\&amp;quot;);alert(1)// 本关对输入的双引号进行了转义，再加一个反斜杠转义回来即可 NO.3 JSONInput:&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1);// 本关使用JSON.stringify()进行过滤，反斜杠也被过滤掉，但可以用scrip">
 <meta name="keywords" content="XSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="alf.nu&#x2F;alert1 XSS 1-">
+<meta property="og:title" content="alf.nu&#x2F;alert1 XSS 1-7">
 <meta property="og:url" content="http://yoursite.com/2018/06/03/alf.nu-XSS/index.html">
 <meta property="og:site_name" content="Lilin">
 <meta property="og:description" content="NO.1 WarmupInput:&amp;quot;);alert(1)// NO.2 AdobeInput:\&amp;quot;);alert(1)// 本关对输入的双引号进行了转义，再加一个反斜杠转义回来即可 NO.3 JSONInput:&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1);// 本关使用JSON.stringify()进行过滤，反斜杠也被过滤掉，但可以用scrip">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-04T14:50:31.828Z">
+<meta property="og:updated_time" content="2018-06-05T07:21:26.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="alf.nu&#x2F;alert1 XSS 1-">
+<meta name="twitter:title" content="alf.nu&#x2F;alert1 XSS 1-7">
 <meta name="twitter:description" content="NO.1 WarmupInput:&amp;quot;);alert(1)// NO.2 AdobeInput:\&amp;quot;);alert(1)// 本关对输入的双引号进行了转义，再加一个反斜杠转义回来即可 NO.3 JSONInput:&amp;lt;/script&amp;gt;&amp;lt;script&amp;gt;alert(1);// 本关使用JSON.stringify()进行过滤，反斜杠也被过滤掉，但可以用scrip">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>alf.nu/alert1 XSS 1- | Lilin</title>
+  <title>alf.nu/alert1 XSS 1-7 | Lilin</title>
   
 
 
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">alf.nu/alert1 XSS 1-</h1>
+          <h1 class="post-title" itemprop="name headline">alf.nu/alert1 XSS 1-7</h1>
         
 
         <div class="post-meta">
@@ -378,7 +378,9 @@
 <p>obj：这个对象将代替Function类里this对象<br>args：这个是数组，它将作为参数传给Function（args–&gt;arguments）<br>apply方法能劫持另外一个对象的方法，继承另外一个对象的属性</p>
 </blockquote>
 <p>先用document.createComment()创建注释，然后再绕过注释</p>
-<h1 id="NO-7-Callback"><a href="#NO-7-Callback" class="headerlink" title="NO.7 Callback"></a>NO.7 Callback</h1>
+<h1 id="NO-7-Callback"><a href="#NO-7-Callback" class="headerlink" title="NO.7 Callback"></a>NO.7 Callback</h1><p>Input:<br><code>&#39;#&#39;;alert(1);//</code></p>
+<p>被单引号包围的双引号会被当成字符串处理，所以在这里前后都使用单引号，绕过双引号的限制</p>
+
       
     </div>
     
@@ -417,6 +419,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/05/sqlmap使用说明/" rel="prev" title="20180605152336">
+                20180605152336 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -497,7 +503,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
