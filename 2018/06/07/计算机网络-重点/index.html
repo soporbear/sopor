@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="计算机网络," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="第一章：概论NO.1 OSI/RM国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构 TCP/IP得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构 五层协议模型综合OSI和TCP/IP的优点，在学习计算机网络时采用一种只有五层协议的体系结构，既简洁又能将概念阐释清楚 三种协议模型的对应关系">
+<meta name="keywords" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络-重点复习">
+<meta property="og:url" content="http://yoursite.com/2018/06/07/计算机网络-重点/index.html">
+<meta property="og:site_name" content="Lilin">
+<meta property="og:description" content="第一章：概论NO.1 OSI/RM国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构 TCP/IP得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构 五层协议模型综合OSI和TCP/IP的优点，在学习计算机网络时采用一种只有五层协议的体系结构，既简洁又能将概念阐释清楚 三种协议模型的对应关系">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/06/07/计算机网络-重点/20180607125301984.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/07/计算机网络-重点/20180607013703828.png">
+<meta property="og:image" content="http://yoursite.com/2018/06/07/计算机网络-重点/20180607041739797.png">
+<meta property="og:updated_time" content="2018-06-07T10:51:14.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算机网络-重点复习">
+<meta name="twitter:description" content="第一章：概论NO.1 OSI/RM国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构 TCP/IP得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构 五层协议模型综合OSI和TCP/IP的优点，在学习计算机网络时采用一种只有五层协议的体系结构，既简洁又能将概念阐释清楚 三种协议模型的对应关系">
+<meta name="twitter:image" content="http://yoursite.com/2018/06/07/计算机网络-重点/20180607125301984.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/07/计算机网络-重点/"/>
+
+
+
+
+
+  <title>计算机网络-重点复习 | Lilin</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lilin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/计算机网络-重点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lilin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lilin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">计算机网络-重点复习</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-07T12:32:21+08:00">
+                2018-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
+                    <span itemprop="name">计算机网络</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一章：概论"><a href="#第一章：概论" class="headerlink" title="第一章：概论"></a>第一章：概论</h1><h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="OSI-RM"><a href="#OSI-RM" class="headerlink" title="OSI/RM"></a>OSI/RM</h3>国际化标准组织提出的一个试图使各种计算机在世界范围内互联成网的标准框架，简称OSI,是一个七层体系结构</li>
+<li><h3 id="TCP-IP"><a href="#TCP-IP" class="headerlink" title="TCP/IP"></a>TCP/IP</h3>得到最广泛应用的计算机网络体系结构，被称为是事实上的国际标准，是一个四层体系结构</li>
+<li><h3 id="五层协议模型"><a href="#五层协议模型" class="headerlink" title="五层协议模型"></a>五层协议模型</h3>综合OSI和TCP/IP的优点，在学习计算机网络时采用一种只有五层协议的体系结构，既简洁又能将概念阐释清楚</li>
+<li><h3 id="三种协议模型的对应关系"><a href="#三种协议模型的对应关系" class="headerlink" title="三种协议模型的对应关系"></a>三种协议模型的对应关系</h3><img src="/2018/06/07/计算机网络-重点/20180607125301984.png" alt=""><a id="more"></a></li>
+<li><h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3>控制两个对等实体（或多个实体）进行通信的规则的集合</li>
+<li><h3 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h3>在协议控制下，两个对等实体间的通信使得本层能够向上一层提供服务。要实现本层协议，还需要使用下面一层所提供的服务</li>
+<li><h3 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h3><ul>
+<li><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4>数据与控制信息的结构或格式</li>
+<li><h4 id="语义"><a href="#语义" class="headerlink" title="语义"></a>语义</h4>即需要发出何种控制信息，完成何种动作以及做出何种响应</li>
+<li><h4 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h4>时间完成顺序的详细说明</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="计算机网络组成（按结构分解）"><a href="#计算机网络组成（按结构分解）" class="headerlink" title="计算机网络组成（按结构分解）"></a>计算机网络组成（按结构分解）</h3><ul>
+<li><h4 id="边缘部分"><a href="#边缘部分" class="headerlink" title="边缘部分"></a>边缘部分</h4>由所有连接在互联网上的主机组成。这部分是用户直接使用的，用来进行通信和资源共享</li>
+<li><h4 id="核心部分"><a href="#核心部分" class="headerlink" title="核心部分"></a>核心部分</h4>由大量网络和连接这些网络的路由器组成。这部分是为边缘部分提供服务的</li>
+</ul>
+</li>
+<li><h3 id="计算机网络组成（按功能分解）"><a href="#计算机网络组成（按功能分解）" class="headerlink" title="计算机网络组成（按功能分解）"></a>计算机网络组成（按功能分解）</h3><ul>
+<li><h4 id="通信子网"><a href="#通信子网" class="headerlink" title="通信子网"></a>通信子网</h4>主要负责全网的数据通信。包括通信线路、网络连接设备、网络通信协议和通信控制软件等</li>
+<li><h4 id="资源子网"><a href="#资源子网" class="headerlink" title="资源子网"></a>资源子网</h4>主要负责全网的信息处理。包括网络中所有的主计算机、I/O设备和终端，各种网络协议、网络软件和数据库等</li>
+</ul>
+</li>
+<li><h3 id="计算机网络三要素：结点、链路和线路"><a href="#计算机网络三要素：结点、链路和线路" class="headerlink" title="计算机网络三要素：结点、链路和线路"></a>计算机网络三要素：结点、链路和线路</h3>在讨论路由转发分组的过程中，往往把单个网络简化成一条<strong>链路</strong>，而路由器称为核心部分的<strong>结点</strong></li>
+</ul>
+<h2 id="NO-3"><a href="#NO-3" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li><h3 id="internet"><a href="#internet" class="headerlink" title="internet"></a>internet</h3>以小写字母i开头的internet是一个通用名词，泛指由多个计算机网络互连而成的计算机网络</li>
+<li><h3 id="Internet"><a href="#Internet" class="headerlink" title="Internet"></a>Internet</h3>以大写字母I开头的Internet是一个专有名词，指当前全球最大的、开放的、由众多网络相互连接而成的特定互联网，它采用TCP/IP协议簇作为通信规则，其前身是美国的ARPANET</li>
+</ul>
+<h2 id="NO-4"><a href="#NO-4" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="客户-服务器方式"><a href="#客户-服务器方式" class="headerlink" title="客户-服务器方式"></a>客户-服务器方式</h3>客户（client）和服务器（server）都是指通信中所涉及的两个应用进程<br>客户是服务请求方，服务器是服务提供方</li>
+</ul>
+<h2 id="NO-5"><a href="#NO-5" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="电路交换"><a href="#电路交换" class="headerlink" title="电路交换"></a>电路交换</h3>整个报文的比特流连续地从源点直达终点，好像在一个管道中传送</li>
+<li><h3 id="报文交换"><a href="#报文交换" class="headerlink" title="报文交换"></a>报文交换</h3>整个报文先传送到相邻节点，全部存储下来后查找转发表，转发到下一节点</li>
+<li><h3 id="分组交换"><a href="#分组交换" class="headerlink" title="分组交换"></a>分组交换</h3>单个分组（整个报文的一部分）传送到相邻结点，存储下来后查找转发表，转发到下一结点</li>
+</ul>
+<p><img src="/2018/06/07/计算机网络-重点/20180607013703828.png" alt=""></p>
+<ul>
+<li><h3 id="分组交换的主要特点"><a href="#分组交换的主要特点" class="headerlink" title="分组交换的主要特点"></a>分组交换的主要特点</h3>通常我们把要发送的整块数据称为一个<strong>报文</strong>，在发送报文前，先把较长的报文划分成为一个个更小的等长数据段，在每个数据段前面，加上一些由必要的控制信息组成的<strong>首部</strong>后，就构成了一个<strong>分组</strong>。分组又称为<strong>包</strong>，首部也可称为<strong>包头</strong>。正是由于分组的首部包含了诸如目的地址和源地址等重要信息，每一个分组才能在互联网中独立选择传输路径并被正确托付到分组传输的终点</li>
+</ul>
+<h2 id="NO-6"><a href="#NO-6" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="计算机网络的分类-按拓扑）"><a href="#计算机网络的分类-按拓扑）" class="headerlink" title="计算机网络的分类(按拓扑）"></a>计算机网络的分类(按拓扑）</h3><p>总线型、星型、环型、树型、网状型</p>
+</li>
+<li><h3 id="计算机网络的分类-按覆盖范围）"><a href="#计算机网络的分类-按覆盖范围）" class="headerlink" title="计算机网络的分类(按覆盖范围）"></a>计算机网络的分类(按覆盖范围）</h3><p>局域网LAN(Local Area Network)、城域网MAN(Metropolitan Area Network)、广域网WAN(Wide Area Network)、个人区域网PAN(Personal Area Network)</p>
+</li>
+</ul>
+<h2 id="NO-7"><a href="#NO-7" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="计算机网络的性能"><a href="#计算机网络的性能" class="headerlink" title="计算机网络的性能"></a>计算机网络的性能</h3><ul>
+<li><h4 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h4>数据的传送速率，单位：bit/s</li>
+<li><h4 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h4>有两种不同含义：<ol>
+<li>某信道允许通过的信号频带范围，单位：Hz</li>
+<li>计算机网络中，某通道传送数据的能力（最高数据率），单位：bit/s</li>
+</ol>
+</li>
+<li><h4 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h4>单位时间内通过某网络（或信道，接口）的实际数据量</li>
+<li><h4 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h4>指数据从网络一传送到另一端所需要的时间，又称<strong>延迟</strong>或<strong>迟延</strong><br>总时延 = 发送时延+传播时延+处理时延+排队时延<br>发送时延 = 数据帧长度（bit）/发送速率（bit/s）<br>传播时延 = 信道长度（m）/电磁波在信道上的传输速率（m/s）</li>
+</ul>
+</li>
+<li><h3 id="往返时间RTT和有效数据率"><a href="#往返时间RTT和有效数据率" class="headerlink" title="往返时间RTT和有效数据率"></a>往返时间RTT和有效数据率</h3>有效数据率 = 数据长度/（发送时间+RTT）</li>
+</ul>
+<h1 id="第二章：物理层与通信基础"><a href="#第二章：物理层与通信基础" class="headerlink" title="第二章：物理层与通信基础"></a>第二章：物理层与通信基础</h1><h2 id="NO-1-1"><a href="#NO-1-1" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="物理层上接口特性"><a href="#物理层上接口特性" class="headerlink" title="物理层上接口特性"></a>物理层上接口特性</h3><ul>
+<li><h4 id="机械特性"><a href="#机械特性" class="headerlink" title="机械特性"></a>机械特性</h4>指明接口所用接线器的形状和尺寸、引脚数目和排列、固定和锁定装置等。平时常见的各种规格的接插件都有严格的标准化的规定</li>
+<li><h4 id="电气特性"><a href="#电气特性" class="headerlink" title="电气特性"></a>电气特性</h4>指明在接口电缆的各条线上出现的电压的范围</li>
+<li><h4 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h4>指明某条线上出现的某一电平的电压的意义</li>
+<li><h4 id="过程特性"><a href="#过程特性" class="headerlink" title="过程特性"></a>过程特性</h4>指明对于不同功能的各种可能事件的出现顺序</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-2-1"><a href="#NO-2-1" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="数据通信系统的三大组成部分"><a href="#数据通信系统的三大组成部分" class="headerlink" title="数据通信系统的三大组成部分"></a>数据通信系统的三大组成部分</h3><ul>
+<li><h4 id="源系统（发送端、发送方）"><a href="#源系统（发送端、发送方）" class="headerlink" title="源系统（发送端、发送方）"></a>源系统（发送端、发送方）</h4>源系统一般包括以下两部分：<ul>
+<li><h5 id="源点（源站，信源）"><a href="#源点（源站，信源）" class="headerlink" title="源点（源站，信源）"></a>源点（源站，信源）</h5>源点设备产生要传输的数据</li>
+<li><h5 id="发送器"><a href="#发送器" class="headerlink" title="发送器"></a>发送器</h5>通常源点设备产生的数字比特流要通过发送器编码后才能传输。典型的发送器如调制器</li>
+</ul>
+</li>
+<li><h4 id="目的系统（接收端、接受方）"><a href="#目的系统（接收端、接受方）" class="headerlink" title="目的系统（接收端、接受方）"></a>目的系统（接收端、接受方）</h4>一般也包括两部分：<ul>
+<li><h5 id="接收器"><a href="#接收器" class="headerlink" title="接收器"></a>接收器</h5>接受传输系统传送过来的信号，并把它转化为能够处理的信息。典型的接收器如解调器</li>
+<li><h5 id="终点（目的站，信宿）"><a href="#终点（目的站，信宿）" class="headerlink" title="终点（目的站，信宿）"></a>终点（目的站，信宿）</h5>终点设备接受接收器传输过来的数字比特流并输出</li>
+</ul>
+</li>
+<li><h4 id="传输系统（传输网络）"><a href="#传输系统（传输网络）" class="headerlink" title="传输系统（传输网络）"></a>传输系统（传输网络）</h4>传输系统可以是简单的一条线，也可以是复杂的网络系统</li>
+</ul>
+</li>
+<li><h3 id="三种基本的通信方式"><a href="#三种基本的通信方式" class="headerlink" title="三种基本的通信方式"></a>三种基本的通信方式</h3><ul>
+<li><h4 id="单向通行（单工通信）"><a href="#单向通行（单工通信）" class="headerlink" title="单向通行（单工通信）"></a>单向通行（单工通信）</h4>只有一个方向的通信而没有反方向的交互</li>
+<li><h4 id="双向交替通信-半双工通信）"><a href="#双向交替通信-半双工通信）" class="headerlink" title="双向交替通信(半双工通信）"></a>双向交替通信(半双工通信）</h4>通信双方都可以发送信息，但不能同时发送</li>
+<li><h4 id="双向同时通信（全双工通信）"><a href="#双向同时通信（全双工通信）" class="headerlink" title="双向同时通信（全双工通信）"></a>双向同时通信（全双工通信）</h4>通信双方可以同时发送和接受信息</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-3-1"><a href="#NO-3-1" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li><h3 id="编码与调制"><a href="#编码与调制" class="headerlink" title="编码与调制"></a>编码与调制</h3><ul>
+<li><h4 id="数字数据—-gt-数字信号"><a href="#数字数据—-gt-数字信号" class="headerlink" title="数字数据—&gt;数字信号"></a>数字数据—&gt;数字信号</h4><ul>
+<li><h5 id="不归零编码"><a href="#不归零编码" class="headerlink" title="不归零编码"></a>不归零编码</h5>正电平代表1，负电平代表0</li>
+<li><h5 id="归零制编码"><a href="#归零制编码" class="headerlink" title="归零制编码"></a>归零制编码</h5>正脉冲（电子电路中的电平状态突变）代表1，负脉冲代表0</li>
+<li><h5 id="曼彻斯特编码"><a href="#曼彻斯特编码" class="headerlink" title="曼彻斯特编码"></a>曼彻斯特编码</h5>位于中心周期的向上跳代表0，位于周期中心的向下跳代表1。曼彻斯特编码可以从信号波形中提取信号时钟频率，具有自同步功能</li>
+<li><h5 id="差分曼彻斯特编码"><a href="#差分曼彻斯特编码" class="headerlink" title="差分曼彻斯特编码"></a>差分曼彻斯特编码</h5>在每一位的中心处始终都有跳变。位开始边界有跳变代表0，位开始边界没有跳变代表1</li>
+</ul>
+</li>
+<li><h4 id="模拟数据-–-gt-模拟信号"><a href="#模拟数据-–-gt-模拟信号" class="headerlink" title="模拟数据 –&gt;模拟信号"></a>模拟数据 –&gt;模拟信号</h4><ul>
+<li><h5 id="调幅AM"><a href="#调幅AM" class="headerlink" title="调幅AM"></a>调幅AM</h5>载波振幅随基带数字信号而变化</li>
+<li><h5 id="调频FM"><a href="#调频FM" class="headerlink" title="调频FM"></a>调频FM</h5>载波频率随基带数字信号而变化</li>
+<li><h5 id="调相PM"><a href="#调相PM" class="headerlink" title="调相PM"></a>调相PM</h5>载波初始相位随基带数字信号而变化</li>
+<li><h5 id="正交振幅调制QAM"><a href="#正交振幅调制QAM" class="headerlink" title="正交振幅调制QAM"></a>正交振幅调制QAM</h5></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-4-1"><a href="#NO-4-1" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="信道极限容量"><a href="#信道极限容量" class="headerlink" title="信道极限容量"></a>信道极限容量</h3><ul>
+<li><h4 id="信噪比"><a href="#信噪比" class="headerlink" title="信噪比"></a>信噪比</h4>信噪比(dB) = 10 log10 (S/N)（dB）</li>
+<li><h4 id="香农公式"><a href="#香农公式" class="headerlink" title="香农公式"></a>香农公式</h4>信道的极限信息传输速率C = W log2 (1+S/N)（bit/s)<br>W为信道的带宽，单位：Hz；S为信道内所传信号的平均功率；N为信道内部的高斯噪声功率</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-5-1"><a href="#NO-5-1" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="导引型传输媒体"><a href="#导引型传输媒体" class="headerlink" title="导引型传输媒体"></a>导引型传输媒体</h3><ul>
+<li><h4 id="双绞线"><a href="#双绞线" class="headerlink" title="双绞线"></a>双绞线</h4><ul>
+<li><h5 id="无屏蔽双绞线"><a href="#无屏蔽双绞线" class="headerlink" title="无屏蔽双绞线"></a>无屏蔽双绞线</h5>绞合可减少对相邻导线的电磁干扰</li>
+<li><h5 id="屏蔽双绞线"><a href="#屏蔽双绞线" class="headerlink" title="屏蔽双绞线"></a>屏蔽双绞线</h5>在双绞线外面加一层用金属丝编制称的网</li>
+</ul>
+</li>
+<li><h4 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h4>由内导体铜质线芯、绝缘层、网状编制的外导体屏蔽层以及保护塑料外层所组成，抗干扰能力强，广泛用于传输较高速率的数据</li>
+<li><h4 id="光缆"><a href="#光缆" class="headerlink" title="光缆"></a>光缆</h4><ul>
+<li><h5 id="多模光纤"><a href="#多模光纤" class="headerlink" title="多模光纤"></a>多模光纤</h5>多模光纤可以存在多条不同角度入射的光线在一条光纤中传输，适合近距离传输</li>
+<li><h5 id="单模光纤"><a href="#单模光纤" class="headerlink" title="单模光纤"></a>单模光纤</h5>光线一直向前传播，而不会产生多次反射</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="非导引型传输媒介"><a href="#非导引型传输媒介" class="headerlink" title="非导引型传输媒介"></a>非导引型传输媒介</h3>无线信道</li>
+</ul>
+<h2 id="NO-6-1"><a href="#NO-6-1" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="信道复用"><a href="#信道复用" class="headerlink" title="信道复用"></a>信道复用</h3><ul>
+<li><h4 id="频分复用FDM"><a href="#频分复用FDM" class="headerlink" title="频分复用FDM"></a>频分复用FDM</h4>将用于传输信道的总带宽划分成若干个子频带（或称子信道），每一个子信道传输一路信号</li>
+<li><h4 id="时分复用TDM"><a href="#时分复用TDM" class="headerlink" title="时分复用TDM"></a>时分复用TDM</h4>将提供给整个信道传输信息的时间划分成若干时间片(简称时隙)，并将这些时隙分配给每一个信号源使用</li>
+<li><h4 id="波分复用WDM"><a href="#波分复用WDM" class="headerlink" title="波分复用WDM"></a>波分复用WDM</h4>波分复用即光的频分复用</li>
+<li><h4 id="码分复用CDM（或码分多址CDMA）"><a href="#码分复用CDM（或码分多址CDMA）" class="headerlink" title="码分复用CDM（或码分多址CDMA）"></a>码分复用CDM（或码分多址CDMA）</h4>每一个用户在同样的时间使用同样的频带进行通信，由于各用户使用不同码型，所以不会造成干扰<br>CDMA系统的一个重要特点就是这种体制给每一个站分配的码片序列不仅必须各不相同，而且还必须互相正交<br><img src="/2018/06/07/计算机网络-重点/20180607041739797.png" alt=""><br>Sx · Tx = 0</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-7-1"><a href="#NO-7-1" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="宽带接入技术"><a href="#宽带接入技术" class="headerlink" title="宽带接入技术"></a>宽带接入技术</h3><ul>
+<li><h4 id="ADSL技术"><a href="#ADSL技术" class="headerlink" title="ADSL技术"></a>ADSL技术</h4>用数字技术对现有的模拟电话用户线进行改造</li>
+<li><h4 id="光纤同轴混合网（HFC网）"><a href="#光纤同轴混合网（HFC网）" class="headerlink" title="光纤同轴混合网（HFC网）"></a>光纤同轴混合网（HFC网）</h4>一种在目前覆盖面很广的有限电视网的基础上开发的一种居民宽带接入网，HFC网把原有电视网中同轴电缆主干部分改换为光纤</li>
+<li><h4 id="FTTx技术"><a href="#FTTx技术" class="headerlink" title="FTTx技术"></a>FTTx技术</h4>光纤到户</li>
+</ul>
+</li>
+</ul>
+<h1 id="第三章：数据链路层"><a href="#第三章：数据链路层" class="headerlink" title="第三章：数据链路层"></a>第三章：数据链路层</h1><h2 id="NO-1-2"><a href="#NO-1-2" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="数据链路层的三个基本问题"><a href="#数据链路层的三个基本问题" class="headerlink" title="数据链路层的三个基本问题"></a>数据链路层的三个基本问题</h3><ul>
+<li><h4 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h4>在一段数据的前后分别添加首部和尾部，就构成了一个帧，接收端在收到物理层上交的比特流后，就能根据首部和尾部的标记，识别出帧的开始和结束<br>首部和尾部的一个重要作用就是<strong>帧定界</strong>，此外还包含许多控制信息<br>每一种链路层协议都规定了所能传送的帧的<strong>数据部分长度上限————最大传送单元MTU</strong><br>控制字符SOH(Start Of Header)表示首部开始，EOT(End Of Transmission)标识帧的结束</li>
+<li><h4 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h4>无论什么样的比特组合的数据，都能按照原样没有差错地通过这个数据链路层<br>为了使数据中可能出现的SOH或EOT在接收端不被解释为控制字符，发送端的数据链路层在数据中出现的控制字符SOH或EOT或ESC的前面插入一个转义字符ESC，在接收端的数据链路层在把数据送往网络层之前删除这个插入的转义字符，这叫做<strong>字节填充</strong>或<strong>字符填充</strong></li>
+<li><h4 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h4>比特在传输过程中可能会产生差错，在一段时间内，传输错误的比特占传输比特总数的比特率称为误码率BER(Bit Error Rate)<br>为了保证数据传输可靠性，必须采用差错检测措施</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-2-2"><a href="#NO-2-2" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="循环冗余校验CRC"><a href="#循环冗余校验CRC" class="headerlink" title="循环冗余校验CRC"></a>循环冗余校验CRC</h3><ol>
+<li>在发送端先把数据划分为组，每组k个比特，其中一组为M</li>
+<li>事先商定好一个(n+1)位的数P，并在M后面添加n个0</li>
+<li>用得到的(k+n)位的数除以P，得出商Q(没有用)和n位的余数R</li>
+<li>余数R作为冗余码拼接在M的后面发送出去</li>
+<li>在接收端把收到的帧除以P，检查余数是否为0</li>
+</ol>
+<p>这种为了进行检错而添加的冗余码称为<strong>帧检验序列FCS</strong><br>CRC仅能做到<strong>无差错接受</strong>，而非<strong>可靠传输</strong></p>
+</li>
+</ul>
+<h2 id="NO-3-2"><a href="#NO-3-2" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li>对于通信质量良好的有线链路，数据链路层协议不使用确认和重传机制，即不要求其提供可靠传输的服务，可靠传输由传输层完成</li>
+<li>对于通信质量差的无线链路，需要考虑帧丢失、帧出错和帧重复，采用了帧编号、确认和重传机制</li>
+</ul>
+<h2 id="NO-4-2"><a href="#NO-4-2" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="零比特填充"><a href="#零比特填充" class="headerlink" title="零比特填充"></a>零比特填充</h3>PPP协议用在SONET/SDH链路时，使用同步传输（一连串的比特流连续传输），这种情况下，PPP协议采用零比特填充方法来实现透明传输<br>具体做法：在发送端，先扫描整个信息字段，只要发现有五个连续的1，立即填入一个0，接收端相反</li>
+</ul>
+<h2 id="NO-5-2"><a href="#NO-5-2" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="局域网的介质访问控制"><a href="#局域网的介质访问控制" class="headerlink" title="局域网的介质访问控制"></a>局域网的介质访问控制</h3><ul>
+<li><h4 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议"></a>CSMA/CD协议</h4></li>
+<li><h4 id="以太网的最短帧长"><a href="#以太网的最短帧长" class="headerlink" title="以太网的最短帧长"></a>以太网的最短帧长</h4>64B=512bit</li>
+</ul>
+</li>
+</ul>
+<h2 id="NO-6-2"><a href="#NO-6-2" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h3>也称物理地址、硬件地址，每个主机可用MAC来标识它在局域网中的地址</li>
+</ul>
+<h2 id="NO-7-2"><a href="#NO-7-2" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="以太网的扩展与碰撞域的概念"><a href="#以太网的扩展与碰撞域的概念" class="headerlink" title="以太网的扩展与碰撞域的概念"></a>以太网的扩展与碰撞域的概念</h3>物理层扩展（集线器）<br>数据链路层扩展（网桥/交换机）<br>两种扩展方式的特点（ p98，p99）<br>以太网交换机的自学习功能(p100)<br>网桥/交换机与集线器相比的优点：因为网桥/交换机具有缓存功能，它可以将不同拓扑结构的、不同帧格式的、不同传输速率的网络连接起来</li>
+</ul>
+<h2 id="NO-8"><a href="#NO-8" class="headerlink" title="NO.8"></a>NO.8</h2><ul>
+<li><h3 id="3种宽带接入技术"><a href="#3种宽带接入技术" class="headerlink" title="3种宽带接入技术"></a>3种宽带接入技术</h3>ADSL/HFC/FTTx</li>
+</ul>
+<h1 id="第四章：网络层"><a href="#第四章：网络层" class="headerlink" title="第四章：网络层"></a>第四章：网络层</h1><h2 id="NO-1-3"><a href="#NO-1-3" class="headerlink" title="NO.1"></a>NO.1</h2><ul>
+<li><h3 id="互联网中网络层的设计思路"><a href="#互联网中网络层的设计思路" class="headerlink" title="互联网中网络层的设计思路"></a>互联网中网络层的设计思路</h3>网络层只提供简单灵活的、无连接的、仅最大努力交付的数据包服务，流量控制和差错处理交给传输层来完成</li>
+</ul>
+<h2 id="NO-2-3"><a href="#NO-2-3" class="headerlink" title="NO.2"></a>NO.2</h2><ul>
+<li><h3 id="网络互连的概念"><a href="#网络互连的概念" class="headerlink" title="网络互连的概念"></a>网络互连的概念</h3>中间设备利用转发器(集线器)或网桥（包括以太网交换机）时，只是把一个相同网段的主机连在了一起，只是把网络规模扩大了，这仍然是一个网络，不将其称作网络互连；而中间设备使用路由器时，将不同网段的网络连在了一起，主机通信过程中涉及到路由选择问题，这时才称作网络互连。（p116）<br>必须明确集线器、网桥、以太网交换机/第二层交换机只是扩大了网络范围，而路由器能实现网络互连</li>
+</ul>
+<h2 id="NO-3-3"><a href="#NO-3-3" class="headerlink" title="NO.3"></a>NO.3</h2><ul>
+<li><h3 id="分类IP地址"><a href="#分类IP地址" class="headerlink" title="分类IP地址"></a>分类IP地址</h3>A,B,C,D,E五类地址的特征比特（p119图4-5）<br>要求能根据IP地址指出其类别<br>明确A ，B，C类网络的主机号、网络号的比特数，每类网络的网络数目，一个A/B/C类网络所能承载的主机数目（p121表4-2）<br>明确特殊地址：（p121表4-3），这些特殊地址不能用作主机地址</li>
+</ul>
+<h2 id="NO-4-3"><a href="#NO-4-3" class="headerlink" title="NO.4"></a>NO.4</h2><ul>
+<li><h3 id="ARP协议的作用"><a href="#ARP协议的作用" class="headerlink" title="ARP协议的作用"></a>ARP协议的作用</h3>注意ARP是解决同一局域网上的IP地址和MAC地址的映射问题，将IP地址映射为MAC地址。</li>
+</ul>
+<h2 id="NO-5-3"><a href="#NO-5-3" class="headerlink" title="NO.5"></a>NO.5</h2><ul>
+<li><h3 id="IP首部"><a href="#IP首部" class="headerlink" title="IP首部"></a>IP首部</h3>特别要掌握分片问题（图130表4-5怎么来的）</li>
+</ul>
+<h2 id="NO-6-3"><a href="#NO-6-3" class="headerlink" title="NO.6"></a>NO.6</h2><ul>
+<li><h3 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h3>明确子网掩码的含义；网络号+主机号部分为1，其余部分为0；<br>简单的子网划分：例如：<br>将一个B类网络划分为20个子网，子网掩码怎么设置？每个子网络可承载的主机数目<br>将一个B类网络平均划分为若干个网络，要求每个子网中主机数目为100，怎么选择子网掩码？共有多少个子网？<br>A/B/C类网络的默认子网掩码。<br>根据主机IP和掩码计算网络地址（这在网络分组路由转发、判断一个主机是否在某个网络上都会用到）。</li>
+</ul>
+<h2 id="NO-7-3"><a href="#NO-7-3" class="headerlink" title="NO.7"></a>NO.7</h2><ul>
+<li><h3 id="CIDR（无类域间路由）"><a href="#CIDR（无类域间路由）" class="headerlink" title="CIDR（无类域间路由）"></a>CIDR（无类域间路由）</h3>前缀与子网掩码的对应关系。<br>采用前缀表示再也不含有类的概念。<br>省去零的表示：128/8等价于128.0.0.0/8<br>在子网划分中的知识要点这里同样要会；例如将138.128/9划分为100个子网，给出每个子网的网络地址、掩码和主机数目、最小主机地址和最大主机地址。<br>另外：<br>要求能判断一个网络A是否属于另一个网络B（即A是否由B划分出来的）,<br>子网掩码的意义延伸：255.255.255.0表示什么含义：<br>a)    一个C类网络的默认子网掩码;<br>b)    一个B类网络经过划出8bit做子网号（256个子网）<br>c)    一个A类网络经过划出16bit做子网号（65536个子网）<br>d)    抛弃类的概念，泛指可承载254个主机的任何一个网络</li>
+</ul>
+<h2 id="NO-8-1"><a href="#NO-8-1" class="headerlink" title="NO.8"></a>NO.8</h2><ul>
+<li>路由转发中多路由匹配时采用的最长前缀匹配原则</li>
+</ul>
+<h2 id="NO-9"><a href="#NO-9" class="headerlink" title="NO.9"></a>NO.9</h2><ul>
+<li><h3 id="路由聚合"><a href="#路由聚合" class="headerlink" title="路由聚合"></a>路由聚合</h3>给定几个网络，将其聚合成一个网络</li>
+</ul>
+<h2 id="NO-10"><a href="#NO-10" class="headerlink" title="NO.10"></a>NO.10</h2><ul>
+<li><h3 id="RIP协议"><a href="#RIP协议" class="headerlink" title="RIP协议"></a>RIP协议</h3>技术要点，能根据当前路由表和收到的邻居路由器信息计算更新后的路由表</li>
+</ul>
+<h2 id="NO-11"><a href="#NO-11" class="headerlink" title="NO.11"></a>NO.11</h2><ul>
+<li><h3 id="Ping与ICMP协议"><a href="#Ping与ICMP协议" class="headerlink" title="Ping与ICMP协议"></a>Ping与ICMP协议</h3></li>
+</ul>
+<h2 id="NO-11-1"><a href="#NO-11-1" class="headerlink" title="NO.11"></a>NO.11</h2><ul>
+<li><h3 id="VPN和NAT"><a href="#VPN和NAT" class="headerlink" title="VPN和NAT"></a>VPN和NAT</h3>1）    明确什么是本地地址，什么是全球地址<br>2）    三个专用地址块（24位/20位/16位）<br>3）    NAT路由器的工作原理（p187图4-60），结合p188表4-11理解图中4个分组的源IP和目标IP地址</li>
+</ul>
+<h2 id="NO-12"><a href="#NO-12" class="headerlink" title="NO.12"></a>NO.12</h2><ul>
+<li><h3 id="自治系统内部的路由选择协议IGP"><a href="#自治系统内部的路由选择协议IGP" class="headerlink" title="自治系统内部的路由选择协议IGP"></a>自治系统内部的路由选择协议IGP</h3>RIP,OSPF属于IGP</li>
+<li><h3 id="自洽系统之间的路由选择协议EGP"><a href="#自洽系统之间的路由选择协议EGP" class="headerlink" title="自洽系统之间的路由选择协议EGP"></a>自洽系统之间的路由选择协议EGP</h3>BGP属于EGP</li>
+</ul>
+<h1 id="第五章：传输层"><a href="#第五章：传输层" class="headerlink" title="第五章：传输层"></a>第五章：传输层</h1><h2 id="NO-1-4"><a href="#NO-1-4" class="headerlink" title="NO.1"></a>NO.1</h2><p>端口和套接字的意义</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/计算机网络/" rel="tag"># 计算机网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/05/sqlmap使用说明/" rel="next" title="sqlmap使用说明">
+                <i class="fa fa-chevron-left"></i> sqlmap使用说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/avatar.jpg"
+                alt="Lilin" />
+            
+              <p class="site-author-name" itemprop="name">Lilin</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/soporbear" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:lilin07@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章：概论"><span class="nav-number">1.</span> <span class="nav-text">第一章：概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-1"><span class="nav-number">1.1.</span> <span class="nav-text">NO.1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI-RM"><span class="nav-number">1.1.1.</span> <span class="nav-text">OSI/RM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP"><span class="nav-number">1.1.2.</span> <span class="nav-text">TCP/IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五层协议模型"><span class="nav-number">1.1.3.</span> <span class="nav-text">五层协议模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种协议模型的对应关系"><span class="nav-number">1.1.4.</span> <span class="nav-text">三种协议模型的对应关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议"><span class="nav-number">1.1.5.</span> <span class="nav-text">协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务"><span class="nav-number">1.1.6.</span> <span class="nav-text">服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议三要素"><span class="nav-number">1.1.7.</span> <span class="nav-text">协议三要素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#语法"><span class="nav-number">1.1.7.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语义"><span class="nav-number">1.1.7.2.</span> <span class="nav-text">语义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步"><span class="nav-number">1.1.7.3.</span> <span class="nav-text">同步</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-2"><span class="nav-number">1.2.</span> <span class="nav-text">NO.2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络组成（按结构分解）"><span class="nav-number">1.2.1.</span> <span class="nav-text">计算机网络组成（按结构分解）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#边缘部分"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">边缘部分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#核心部分"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">核心部分</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络组成（按功能分解）"><span class="nav-number">1.2.2.</span> <span class="nav-text">计算机网络组成（按功能分解）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通信子网"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">通信子网</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#资源子网"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">资源子网</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络三要素：结点、链路和线路"><span class="nav-number">1.2.3.</span> <span class="nav-text">计算机网络三要素：结点、链路和线路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-3"><span class="nav-number">1.3.</span> <span class="nav-text">NO.3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#internet"><span class="nav-number">1.3.1.</span> <span class="nav-text">internet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Internet"><span class="nav-number">1.3.2.</span> <span class="nav-text">Internet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-4"><span class="nav-number">1.4.</span> <span class="nav-text">NO.4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户-服务器方式"><span class="nav-number">1.4.1.</span> <span class="nav-text">客户-服务器方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-5"><span class="nav-number">1.5.</span> <span class="nav-text">NO.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电路交换"><span class="nav-number">1.5.1.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报文交换"><span class="nav-number">1.5.2.</span> <span class="nav-text">报文交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组交换"><span class="nav-number">1.5.3.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组交换的主要特点"><span class="nav-number">1.5.4.</span> <span class="nav-text">分组交换的主要特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-6"><span class="nav-number">1.6.</span> <span class="nav-text">NO.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络的分类-按拓扑）"><span class="nav-number">1.6.1.</span> <span class="nav-text">计算机网络的分类(按拓扑）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络的分类-按覆盖范围）"><span class="nav-number">1.6.2.</span> <span class="nav-text">计算机网络的分类(按覆盖范围）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-7"><span class="nav-number">1.7.</span> <span class="nav-text">NO.7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络的性能"><span class="nav-number">1.7.1.</span> <span class="nav-text">计算机网络的性能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#速率"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">速率</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#带宽"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">带宽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#吞吐量"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">吞吐量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延"><span class="nav-number">1.7.1.4.</span> <span class="nav-text">时延</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#往返时间RTT和有效数据率"><span class="nav-number">1.7.2.</span> <span class="nav-text">往返时间RTT和有效数据率</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章：物理层与通信基础"><span class="nav-number">2.</span> <span class="nav-text">第二章：物理层与通信基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-1-1"><span class="nav-number">2.1.</span> <span class="nav-text">NO.1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#物理层上接口特性"><span class="nav-number">2.1.1.</span> <span class="nav-text">物理层上接口特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#机械特性"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">机械特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#电气特性"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">电气特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#功能特性"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">功能特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#过程特性"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">过程特性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-2-1"><span class="nav-number">2.2.</span> <span class="nav-text">NO.2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据通信系统的三大组成部分"><span class="nav-number">2.2.1.</span> <span class="nav-text">数据通信系统的三大组成部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#源系统（发送端、发送方）"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">源系统（发送端、发送方）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#源点（源站，信源）"><span class="nav-number">2.2.1.1.1.</span> <span class="nav-text">源点（源站，信源）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#发送器"><span class="nav-number">2.2.1.1.2.</span> <span class="nav-text">发送器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目的系统（接收端、接受方）"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">目的系统（接收端、接受方）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#接收器"><span class="nav-number">2.2.1.2.1.</span> <span class="nav-text">接收器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#终点（目的站，信宿）"><span class="nav-number">2.2.1.2.2.</span> <span class="nav-text">终点（目的站，信宿）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#传输系统（传输网络）"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">传输系统（传输网络）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三种基本的通信方式"><span class="nav-number">2.2.2.</span> <span class="nav-text">三种基本的通信方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单向通行（单工通信）"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">单向通行（单工通信）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双向交替通信-半双工通信）"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">双向交替通信(半双工通信）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双向同时通信（全双工通信）"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">双向同时通信（全双工通信）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-3-1"><span class="nav-number">2.3.</span> <span class="nav-text">NO.3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码与调制"><span class="nav-number">2.3.1.</span> <span class="nav-text">编码与调制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数字数据—-gt-数字信号"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">数字数据—&gt;数字信号</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#不归零编码"><span class="nav-number">2.3.1.1.1.</span> <span class="nav-text">不归零编码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#归零制编码"><span class="nav-number">2.3.1.1.2.</span> <span class="nav-text">归零制编码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#曼彻斯特编码"><span class="nav-number">2.3.1.1.3.</span> <span class="nav-text">曼彻斯特编码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#差分曼彻斯特编码"><span class="nav-number">2.3.1.1.4.</span> <span class="nav-text">差分曼彻斯特编码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟数据-–-gt-模拟信号"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">模拟数据 –&gt;模拟信号</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#调幅AM"><span class="nav-number">2.3.1.2.1.</span> <span class="nav-text">调幅AM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调频FM"><span class="nav-number">2.3.1.2.2.</span> <span class="nav-text">调频FM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#调相PM"><span class="nav-number">2.3.1.2.3.</span> <span class="nav-text">调相PM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#正交振幅调制QAM"><span class="nav-number">2.3.1.2.4.</span> <span class="nav-text">正交振幅调制QAM</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-4-1"><span class="nav-number">2.4.</span> <span class="nav-text">NO.4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信道极限容量"><span class="nav-number">2.4.1.</span> <span class="nav-text">信道极限容量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#信噪比"><span class="nav-number">2.4.1.1.</span> <span class="nav-text">信噪比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#香农公式"><span class="nav-number">2.4.1.2.</span> <span class="nav-text">香农公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-5-1"><span class="nav-number">2.5.</span> <span class="nav-text">NO.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导引型传输媒体"><span class="nav-number">2.5.1.</span> <span class="nav-text">导引型传输媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#双绞线"><span class="nav-number">2.5.1.1.</span> <span class="nav-text">双绞线</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#无屏蔽双绞线"><span class="nav-number">2.5.1.1.1.</span> <span class="nav-text">无屏蔽双绞线</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#屏蔽双绞线"><span class="nav-number">2.5.1.1.2.</span> <span class="nav-text">屏蔽双绞线</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同轴电缆"><span class="nav-number">2.5.1.2.</span> <span class="nav-text">同轴电缆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光缆"><span class="nav-number">2.5.1.3.</span> <span class="nav-text">光缆</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#多模光纤"><span class="nav-number">2.5.1.3.1.</span> <span class="nav-text">多模光纤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#单模光纤"><span class="nav-number">2.5.1.3.2.</span> <span class="nav-text">单模光纤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非导引型传输媒介"><span class="nav-number">2.5.2.</span> <span class="nav-text">非导引型传输媒介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-6-1"><span class="nav-number">2.6.</span> <span class="nav-text">NO.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信道复用"><span class="nav-number">2.6.1.</span> <span class="nav-text">信道复用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#频分复用FDM"><span class="nav-number">2.6.1.1.</span> <span class="nav-text">频分复用FDM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时分复用TDM"><span class="nav-number">2.6.1.2.</span> <span class="nav-text">时分复用TDM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#波分复用WDM"><span class="nav-number">2.6.1.3.</span> <span class="nav-text">波分复用WDM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#码分复用CDM（或码分多址CDMA）"><span class="nav-number">2.6.1.4.</span> <span class="nav-text">码分复用CDM（或码分多址CDMA）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-7-1"><span class="nav-number">2.7.</span> <span class="nav-text">NO.7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#宽带接入技术"><span class="nav-number">2.7.1.</span> <span class="nav-text">宽带接入技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ADSL技术"><span class="nav-number">2.7.1.1.</span> <span class="nav-text">ADSL技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#光纤同轴混合网（HFC网）"><span class="nav-number">2.7.1.2.</span> <span class="nav-text">光纤同轴混合网（HFC网）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FTTx技术"><span class="nav-number">2.7.1.3.</span> <span class="nav-text">FTTx技术</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章：数据链路层"><span class="nav-number">3.</span> <span class="nav-text">第三章：数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-1-2"><span class="nav-number">3.1.</span> <span class="nav-text">NO.1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据链路层的三个基本问题"><span class="nav-number">3.1.1.</span> <span class="nav-text">数据链路层的三个基本问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装成帧"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明传输"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">透明传输</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#差错检测"><span class="nav-number">3.1.1.3.</span> <span class="nav-text">差错检测</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-2-2"><span class="nav-number">3.2.</span> <span class="nav-text">NO.2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#循环冗余校验CRC"><span class="nav-number">3.2.1.</span> <span class="nav-text">循环冗余校验CRC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-3-2"><span class="nav-number">3.3.</span> <span class="nav-text">NO.3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-4-2"><span class="nav-number">3.4.</span> <span class="nav-text">NO.4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#零比特填充"><span class="nav-number">3.4.1.</span> <span class="nav-text">零比特填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-5-2"><span class="nav-number">3.5.</span> <span class="nav-text">NO.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局域网的介质访问控制"><span class="nav-number">3.5.1.</span> <span class="nav-text">局域网的介质访问控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSMA-CD协议"><span class="nav-number">3.5.1.1.</span> <span class="nav-text">CSMA/CD协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以太网的最短帧长"><span class="nav-number">3.5.1.2.</span> <span class="nav-text">以太网的最短帧长</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-6-2"><span class="nav-number">3.6.</span> <span class="nav-text">NO.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC地址"><span class="nav-number">3.6.1.</span> <span class="nav-text">MAC地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-7-2"><span class="nav-number">3.7.</span> <span class="nav-text">NO.7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网的扩展与碰撞域的概念"><span class="nav-number">3.7.1.</span> <span class="nav-text">以太网的扩展与碰撞域的概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-8"><span class="nav-number">3.8.</span> <span class="nav-text">NO.8</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3种宽带接入技术"><span class="nav-number">3.8.1.</span> <span class="nav-text">3种宽带接入技术</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章：网络层"><span class="nav-number">4.</span> <span class="nav-text">第四章：网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-1-3"><span class="nav-number">4.1.</span> <span class="nav-text">NO.1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网中网络层的设计思路"><span class="nav-number">4.1.1.</span> <span class="nav-text">互联网中网络层的设计思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-2-3"><span class="nav-number">4.2.</span> <span class="nav-text">NO.2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络互连的概念"><span class="nav-number">4.2.1.</span> <span class="nav-text">网络互连的概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-3-3"><span class="nav-number">4.3.</span> <span class="nav-text">NO.3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分类IP地址"><span class="nav-number">4.3.1.</span> <span class="nav-text">分类IP地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-4-3"><span class="nav-number">4.4.</span> <span class="nav-text">NO.4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ARP协议的作用"><span class="nav-number">4.4.1.</span> <span class="nav-text">ARP协议的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-5-3"><span class="nav-number">4.5.</span> <span class="nav-text">NO.5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IP首部"><span class="nav-number">4.5.1.</span> <span class="nav-text">IP首部</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-6-3"><span class="nav-number">4.6.</span> <span class="nav-text">NO.6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#子网划分"><span class="nav-number">4.6.1.</span> <span class="nav-text">子网划分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-7-3"><span class="nav-number">4.7.</span> <span class="nav-text">NO.7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CIDR（无类域间路由）"><span class="nav-number">4.7.1.</span> <span class="nav-text">CIDR（无类域间路由）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-8-1"><span class="nav-number">4.8.</span> <span class="nav-text">NO.8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-9"><span class="nav-number">4.9.</span> <span class="nav-text">NO.9</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#路由聚合"><span class="nav-number">4.9.1.</span> <span class="nav-text">路由聚合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-10"><span class="nav-number">4.10.</span> <span class="nav-text">NO.10</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RIP协议"><span class="nav-number">4.10.1.</span> <span class="nav-text">RIP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-11"><span class="nav-number">4.11.</span> <span class="nav-text">NO.11</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ping与ICMP协议"><span class="nav-number">4.11.1.</span> <span class="nav-text">Ping与ICMP协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-11-1"><span class="nav-number">4.12.</span> <span class="nav-text">NO.11</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VPN和NAT"><span class="nav-number">4.12.1.</span> <span class="nav-text">VPN和NAT</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-12"><span class="nav-number">4.13.</span> <span class="nav-text">NO.12</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自治系统内部的路由选择协议IGP"><span class="nav-number">4.13.1.</span> <span class="nav-text">自治系统内部的路由选择协议IGP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自洽系统之间的路由选择协议EGP"><span class="nav-number">4.13.2.</span> <span class="nav-text">自洽系统之间的路由选择协议EGP</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章：传输层"><span class="nav-number">5.</span> <span class="nav-text">第五章：传输层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NO-1-4"><span class="nav-number">5.1.</span> <span class="nav-text">NO.1</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lilin</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
