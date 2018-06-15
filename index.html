@@ -249,6 +249,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/09/同步通信与死锁/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lilin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lilin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/09/同步通信与死锁/" itemprop="url">同步通信与死锁</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-09T17:56:43+08:00">
+                2018-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="进程互斥和同步"><a href="#进程互斥和同步" class="headerlink" title="进程互斥和同步"></a>进程互斥和同步</h1><ul>
+<li><h2 id="临界区和临界资源"><a href="#临界区和临界资源" class="headerlink" title="临界区和临界资源"></a>临界区和临界资源</h2><ul>
+<li><h3 id="什么叫临界区-critical-section-？"><a href="#什么叫临界区-critical-section-？" class="headerlink" title="什么叫临界区(critical section) ？"></a>什么叫临界区(critical section) ？</h3>在并发进程中，对共享变量操作的那段程序叫<strong>临界区</strong>。或把不允许多个并发进程交叉执行的一段程序称为<strong>临界区</strong></li>
+<li><h3 id="与时间有关的错误"><a href="#与时间有关的错误" class="headerlink" title="与时间有关的错误"></a>与时间有关的错误</h3>对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式：<ul>
+<li>结果不唯一</li>
+<li>永远等待</li>
+</ul>
+</li>
+<li><h3 id="什么叫互斥？"><a href="#什么叫互斥？" class="headerlink" title="什么叫互斥？"></a>什么叫互斥？</h3>一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必须以一个不允许交叉执行的单位执行。即不允许两个以上的共享该资源的并发进程同时进入临界区称为<strong>互斥</strong><br>而一次仅允许一个进程使用的资源称为<strong>临界资源（critical resource）</strong></li>
+<li><h3 id="临界区调度原则"><a href="#临界区调度原则" class="headerlink" title="临界区调度原则"></a>临界区调度原则</h3><ul>
+<li>一次至多一个进程能够进入临界区内执行</li>
+<li>如果已有进程在临界区，其他试图进入的进程应等待</li>
+<li>进入临界区内的进程应在有限时间内退出，以便让等待进程中的一个进入</li></ul></li></ul></li></ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/09/同步通信与死锁/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/07/计算机网络-重点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -866,182 +1002,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/sqli-labs-less11/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Lilin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lilin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/29/sqli-labs-less11/" itemprop="url">sqli-labs less11-16</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T21:22:42+08:00">
-                2018-05-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web安全/" itemprop="url" rel="index">
-                    <span itemprop="name">Web安全</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Web安全/SQL注入/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL注入</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="LESS-11-基于字符串的注入（POST）"><a href="#LESS-11-基于字符串的注入（POST）" class="headerlink" title="LESS 11 基于字符串的注入（POST）"></a>LESS 11 基于字符串的注入（POST）</h1><p>在username栏输入单引号’测试,结果：</p>
-<blockquote>
-<p>You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ‘’’’ and password=’’ LIMIT 0,1’ at line 1</p>
-</blockquote>
-<p>猜测查询语句为：select * from users where username = ‘$username’ and password=’$password’ LIMIT 0,1<br>于是乎构造payload：</p>
-<blockquote>
-<p>Username :     0’ union select group_concat(username),group_concat(password) from users#<br>Password :     </p>
-</blockquote>
-<p>结果：</p>
-<blockquote>
-<p>Your Login name:Dumb,Angelina,Dummy,secure,stupid,superman,batman,admin,admin1,admin2,admin3,dhakkan,admin4<br>Your Password:Dumb,I-kill-you,p@ssword,crappy,stupidity,genious,mob!le,admin,admin1,admin2,admin3,dumbo,admin4</p>
-</blockquote>
-<h1 id="LESS-12-基于双引号字符串的注入（POST）"><a href="#LESS-12-基于双引号字符串的注入（POST）" class="headerlink" title="LESS 12 基于双引号字符串的注入（POST）"></a>LESS 12 基于双引号字符串的注入（POST）</h1><p>和上一关的不同在于字符串被双引号和括号包围，通过报错讯息可以知道<br>payload如下：</p>
-<blockquote>
-<p>Username :     0”) union select group_concat(username),group_concat(password) from users#<br>Password :<br></p></blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/29/sqli-labs-less11/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/categories/2/">2</a><a class="extend next" rel="next" href="/categories/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/categories/2/">2</a><a class="page-number" href="/categories/3/">3</a><a class="extend next" rel="next" href="/categories/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1091,7 +1056,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
