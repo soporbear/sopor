@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="进程互斥和同步 临界区和临界资源 什么叫临界区(critical section) ？在并发进程中，对共享变量操作的那段程序叫临界区。或把不允许多个并发进程交叉执行的一段程序称为临界区 与时间有关的错误对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式： 结果不唯一 永远等待   什么叫互斥？一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必">
+<meta name="description" content="临界区和临界资源 什么叫临界区(critical section) ？在并发进程中，对共享变量操作的那段程序叫临界区。或把不允许多个并发进程交叉执行的一段程序称为临界区 与时间有关的错误对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式： 结果不唯一 永远等待   什么叫互斥？一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必须以一个不允许交">
 <meta name="keywords" content="操作系统">
 <meta property="og:type" content="article">
-<meta property="og:title" content="同步通信与死锁">
+<meta property="og:title" content="进程互斥和同步">
 <meta property="og:url" content="http://yoursite.com/2018/06/09/同步通信与死锁/index.html">
 <meta property="og:site_name" content="Lilin">
-<meta property="og:description" content="进程互斥和同步 临界区和临界资源 什么叫临界区(critical section) ？在并发进程中，对共享变量操作的那段程序叫临界区。或把不允许多个并发进程交叉执行的一段程序称为临界区 与时间有关的错误对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式： 结果不唯一 永远等待   什么叫互斥？一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必">
+<meta property="og:description" content="临界区和临界资源 什么叫临界区(critical section) ？在并发进程中，对共享变量操作的那段程序叫临界区。或把不允许多个并发进程交叉执行的一段程序称为临界区 与时间有关的错误对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式： 结果不唯一 永远等待   什么叫互斥？一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必须以一个不允许交">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T11:42:37.655Z">
+<meta property="og:updated_time" content="2018-06-15T03:33:01.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="同步通信与死锁">
-<meta name="twitter:description" content="进程互斥和同步 临界区和临界资源 什么叫临界区(critical section) ？在并发进程中，对共享变量操作的那段程序叫临界区。或把不允许多个并发进程交叉执行的一段程序称为临界区 与时间有关的错误对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式： 结果不唯一 永远等待   什么叫互斥？一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必">
+<meta name="twitter:title" content="进程互斥和同步">
+<meta name="twitter:description" content="临界区和临界资源 什么叫临界区(critical section) ？在并发进程中，对共享变量操作的那段程序叫临界区。或把不允许多个并发进程交叉执行的一段程序称为临界区 与时间有关的错误对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式： 结果不唯一 永远等待   什么叫互斥？一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必须以一个不允许交">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>同步通信与死锁 | Lilin</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>进程互斥和同步 | Lilin</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">同步通信与死锁</h1>
+          <h1 class="post-title" itemprop="name headline">进程互斥和同步</h1>
         
 
         <div class="post-meta">
@@ -292,6 +292,39 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/" itemprop="url" rel="index">
+                    <span itemprop="name">操作系统</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/操作系统/进程同步/" itemprop="url" rel="index">
+                    <span itemprop="name">进程同步</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -320,25 +353,23 @@
       
 
       
-        <h1 id="进程互斥和同步"><a href="#进程互斥和同步" class="headerlink" title="进程互斥和同步"></a>进程互斥和同步</h1><ul>
-<li><h2 id="临界区和临界资源"><a href="#临界区和临界资源" class="headerlink" title="临界区和临界资源"></a>临界区和临界资源</h2><ul>
-<li><h3 id="什么叫临界区-critical-section-？"><a href="#什么叫临界区-critical-section-？" class="headerlink" title="什么叫临界区(critical section) ？"></a>什么叫临界区(critical section) ？</h3>在并发进程中，对共享变量操作的那段程序叫<strong>临界区</strong>。或把不允许多个并发进程交叉执行的一段程序称为<strong>临界区</strong></li>
-<li><h3 id="与时间有关的错误"><a href="#与时间有关的错误" class="headerlink" title="与时间有关的错误"></a>与时间有关的错误</h3>对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式：<ul>
+        <h1 id="临界区和临界资源"><a href="#临界区和临界资源" class="headerlink" title="临界区和临界资源"></a>临界区和临界资源</h1><ul>
+<li><h2 id="什么叫临界区-critical-section-？"><a href="#什么叫临界区-critical-section-？" class="headerlink" title="什么叫临界区(critical section) ？"></a>什么叫临界区(critical section) ？</h2>在并发进程中，对共享变量操作的那段程序叫<strong>临界区</strong>。或把不允许多个并发进程交叉执行的一段程序称为<strong>临界区</strong></li>
+<li><h2 id="与时间有关的错误"><a href="#与时间有关的错误" class="headerlink" title="与时间有关的错误"></a>与时间有关的错误</h2>对于一组交往的并发进程，执行的相对速度无法相互控制，各种与时间有关的错误就可能出现，表现形式：<ul>
 <li>结果不唯一</li>
 <li>永远等待</li>
 </ul>
 </li>
-<li><h3 id="什么叫互斥？"><a href="#什么叫互斥？" class="headerlink" title="什么叫互斥？"></a>什么叫互斥？</h3>一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必须以一个不允许交叉执行的单位执行。即不允许两个以上的共享该资源的并发进程同时进入临界区称为<strong>互斥</strong><br>而一次仅允许一个进程使用的资源称为<strong>临界资源（critical resource）</strong></li>
-<li><h3 id="临界区调度原则"><a href="#临界区调度原则" class="headerlink" title="临界区调度原则"></a>临界区调度原则</h3><ul>
+<li><h2 id="什么叫互斥？"><a href="#什么叫互斥？" class="headerlink" title="什么叫互斥？"></a>什么叫互斥？</h2>一组并发进程中的一个或多个程序段，因共享某一公有资源而导致它们必须以一个不允许交叉执行的单位执行。即不允许两个以上的共享该资源的并发进程同时进入临界区称为<strong>互斥</strong><br>而一次仅允许一个进程使用的资源称为<strong>临界资源（critical resource）</strong></li>
+<li><h2 id="临界区调度原则"><a href="#临界区调度原则" class="headerlink" title="临界区调度原则"></a>临界区调度原则</h2><ul>
 <li>一次至多一个进程能够进入临界区内执行</li>
 <li>如果已有进程在临界区，其他试图进入的进程应等待</li>
 <li>进入临界区内的进程应在有限时间内退出，以便让等待进程中的一个进入<a id="more"></a></li>
 </ul>
 </li>
-<li><h3 id="实现临界区的软件算法Peterson算法"><a href="#实现临界区的软件算法Peterson算法" class="headerlink" title="实现临界区的软件算法Peterson算法"></a>实现临界区的软件算法Peterson算法</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> inside[<span class="number">2</span>];</span><br><span class="line">inside[<span class="number">0</span>]=<span class="literal">false</span>;</span><br><span class="line">inside[<span class="number">1</span>]=<span class="literal">false</span>;</span><br><span class="line"><span class="keyword">enum</span> &#123;<span class="number">0</span>,<span class="number">1</span>&#125; turn;</span><br><span class="line"></span><br><span class="line">cobegin</span><br><span class="line"><span class="function">process <span class="title">P0</span><span class="params">( )</span> </span>&#123;                   </span><br><span class="line">  inside[<span class="number">0</span>]=<span class="literal">true</span>;    <span class="comment">//p0想要进入临界区</span></span><br><span class="line">  turn=<span class="number">1</span>;            <span class="comment">//p1能够进入临界区 </span></span><br><span class="line">  <span class="keyword">while</span>(inside[<span class="number">1</span>]&amp;&amp;turn==<span class="number">1</span>);    <span class="comment">//p1在临界区，等待……</span></span><br><span class="line">    &#123;临界区&#125;;                      </span><br><span class="line">    inside[<span class="number">0</span>]=<span class="literal">false</span>;   <span class="comment">//p0退出临界区</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">process <span class="title">P1</span><span class="params">( )</span> </span>&#123;</span><br><span class="line">   inside[<span class="number">1</span>]=<span class="literal">true</span>;    <span class="comment">//p1想要进入临界区</span></span><br><span class="line">   turn=<span class="number">0</span>;            <span class="comment">//p0能够进入临界区 </span></span><br><span class="line">   <span class="keyword">while</span>(inside[<span class="number">0</span>]&amp;&amp;turn==<span class="number">0</span>);    <span class="comment">//p0在临界区，等待……</span></span><br><span class="line">    &#123;临界区&#125;;                     </span><br><span class="line">   inside[<span class="number">1</span>]=<span class="literal">false</span>;   <span class="comment">//p0退出临界区</span></span><br><span class="line">&#125;                                 </span><br><span class="line">coend</span><br><span class="line"><span class="comment">//turn只能取一值，故总有一个进程能进入临界区</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实现临界区管理的硬件设施</p>
+<li><h2 id="实现临界区的软件算法Peterson算法"><a href="#实现临界区的软件算法Peterson算法" class="headerlink" title="实现临界区的软件算法Peterson算法"></a>实现临界区的软件算法Peterson算法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> inside[<span class="number">2</span>];</span><br><span class="line">inside[<span class="number">0</span>]=<span class="literal">false</span>;</span><br><span class="line">inside[<span class="number">1</span>]=<span class="literal">false</span>;</span><br><span class="line"><span class="keyword">enum</span> &#123;<span class="number">0</span>,<span class="number">1</span>&#125; turn;</span><br><span class="line"></span><br><span class="line">cobegin</span><br><span class="line"><span class="function">process <span class="title">P0</span><span class="params">( )</span> </span>&#123;                   </span><br><span class="line">  inside[<span class="number">0</span>]=<span class="literal">true</span>;    <span class="comment">//p0想要进入临界区</span></span><br><span class="line">  turn=<span class="number">1</span>;            <span class="comment">//p1能够进入临界区 </span></span><br><span class="line">  <span class="keyword">while</span>(inside[<span class="number">1</span>]&amp;&amp;turn==<span class="number">1</span>);    <span class="comment">//p1在临界区，等待……</span></span><br><span class="line">    &#123;临界区&#125;;                      </span><br><span class="line">    inside[<span class="number">0</span>]=<span class="literal">false</span>;   <span class="comment">//p0退出临界区</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">process <span class="title">P1</span><span class="params">( )</span> </span>&#123;</span><br><span class="line">   inside[<span class="number">1</span>]=<span class="literal">true</span>;    <span class="comment">//p1想要进入临界区</span></span><br><span class="line">   turn=<span class="number">0</span>;            <span class="comment">//p0能够进入临界区 </span></span><br><span class="line">   <span class="keyword">while</span>(inside[<span class="number">0</span>]&amp;&amp;turn==<span class="number">0</span>);    <span class="comment">//p0在临界区，等待……</span></span><br><span class="line">    &#123;临界区&#125;;                     </span><br><span class="line">   inside[<span class="number">1</span>]=<span class="literal">false</span>;   <span class="comment">//p0退出临界区</span></span><br><span class="line">&#125;                                 </span><br><span class="line">coend</span><br><span class="line"><span class="comment">//turn只能取一值，故总有一个进程能进入临界区</span></span><br></pre></td></tr></table></figure>
 <ul>
+<li>实现临界区管理的硬件设施<ul>
 <li>关中断</li>
 <li>测试并建立指令</li>
 <li>对换指令</li>
@@ -346,8 +377,8 @@
 </li>
 </ul>
 </li>
-<li><h2 id="进程互斥"><a href="#进程互斥" class="headerlink" title="进程互斥"></a>进程互斥</h2><ul>
-<li><h3 id="锁和上锁、开锁操作"><a href="#锁和上锁、开锁操作" class="headerlink" title="锁和上锁、开锁操作"></a>锁和上锁、开锁操作</h3>一个进程使用某个临界资源之前必须完成下列操作：</li>
+<li><h1 id="进程互斥"><a href="#进程互斥" class="headerlink" title="进程互斥"></a>进程互斥</h1><ul>
+<li><h2 id="锁和上锁、开锁操作"><a href="#锁和上锁、开锁操作" class="headerlink" title="锁和上锁、开锁操作"></a>锁和上锁、开锁操作</h2>一个进程使用某个临界资源之前必须完成下列操作：</li>
 </ul>
 <ol>
 <li>考察锁位的值</li>
@@ -358,35 +389,35 @@
 <li>当进程使用完资源后，将锁位置为“0 ” ，称为开锁操作</li>
 </ol>
 </li>
-<li><h2 id="信号灯和P、V操作"><a href="#信号灯和P、V操作" class="headerlink" title="信号灯和P、V操作"></a>信号灯和P、V操作</h2><ul>
-<li><h3 id="信号灯-semaphore-的概念"><a href="#信号灯-semaphore-的概念" class="headerlink" title="信号灯(semaphore)的概念"></a>信号灯(semaphore)的概念</h3><ul>
+<li><h1 id="信号灯和P、V操作"><a href="#信号灯和P、V操作" class="headerlink" title="信号灯和P、V操作"></a>信号灯和P、V操作</h1><ul>
+<li><h2 id="信号灯-semaphore-的概念"><a href="#信号灯-semaphore-的概念" class="headerlink" title="信号灯(semaphore)的概念"></a>信号灯(semaphore)的概念</h2><ul>
 <li>信号灯的概念是由Dijkstra提出的（1968)</li>
 <li>他把互斥的概念抽象到信号量这个概念中</li>
 <li>信号量是一个被保护的变量，只有P操作、V操作和一种称为信号量初始化操作才能访问和改变它的值</li>
 </ul>
 </li>
-<li><h3 id="信号灯的定义"><a href="#信号灯的定义" class="headerlink" title="信号灯的定义"></a>信号灯的定义</h3>信号灯是一个确定的二元数组（s,q）<ul>
+<li><h2 id="信号灯的定义"><a href="#信号灯的定义" class="headerlink" title="信号灯的定义"></a>信号灯的定义</h2>信号灯是一个确定的二元数组（s,q）<ul>
 <li>s ：是一个有非负初值的整型变量，代表资源的实体。在实际应用中应准确地说明s的意义和初值</li>
 <li>q ：是一个初始状态为空的等待队列</li>
 </ul>
 </li>
-<li><h3 id="P、V操作"><a href="#P、V操作" class="headerlink" title="P、V操作"></a>P、V操作</h3><p>信号灯的值仅能由P、V操作来改变。</p>
+<li><h2 id="P、V操作"><a href="#P、V操作" class="headerlink" title="P、V操作"></a>P、V操作</h2><p>信号灯的值仅能由P、V操作来改变。</p>
 <ul>
 <li>P操作记为：P(S)，P操作是一个原子操作</li>
 <li>V操作记为：V(S)，V操作是一个原子操作</li>
 </ul>
 <p>在实际操作系统中，一般情况下是由机器硬件提供P、V操作的指令。若机器不提供P、V操作的指令，则操作系统提供P、V操作原语</p>
 <ul>
-<li><h4 id="P操作"><a href="#P操作" class="headerlink" title="P操作"></a>P操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">s--;        <span class="comment">//该进程想要对s进行操作</span></span><br><span class="line"><span class="keyword">if</span>(s&lt;<span class="number">0</span>)     <span class="comment">//如果s资源不足</span></span><br><span class="line">挂起该进程;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><h3 id="P操作"><a href="#P操作" class="headerlink" title="P操作"></a>P操作</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">s--;        <span class="comment">//该进程想要对s进行操作</span></span><br><span class="line"><span class="keyword">if</span>(s&lt;<span class="number">0</span>)     <span class="comment">//如果s资源不足</span></span><br><span class="line">挂起该进程;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h4 id="V操作"><a href="#V操作" class="headerlink" title="V操作"></a>V操作</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">s++;        <span class="comment">//对s操作完毕，归还资源</span></span><br><span class="line"><span class="keyword">if</span>(s&lt;=<span class="number">0</span>)    <span class="comment">//存在想要对s操作的挂起的资源</span></span><br><span class="line">唤醒挂起的进程;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><h3 id="V操作"><a href="#V操作" class="headerlink" title="V操作"></a>V操作</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">s++;        <span class="comment">//对s操作完毕，归还资源</span></span><br><span class="line"><span class="keyword">if</span>(s&lt;=<span class="number">0</span>)    <span class="comment">//存在想要对s操作的挂起的资源</span></span><br><span class="line">唤醒挂起的进程;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><h2 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h2><ul>
-<li><h3 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h3>所谓同步就是并发进程在一些关键点上可能需要相互等待与互通消息，这样的相互制约关系称为进程同步在操作系统中，同步有各种各样，但归纳起来有两类：<ul>
+</ul>
+</li>
+<li><h1 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h1><ul>
+<li><h2 id="同步"><a href="#同步" class="headerlink" title="同步"></a>同步</h2>所谓同步就是并发进程在一些关键点上可能需要相互等待与互通消息，这样的相互制约关系称为进程同步在操作系统中，同步有各种各样，但归纳起来有两类：<ul>
 <li>诸进程合作完成某工作的逻辑顺序</li>
 <li>对系统资源的共享。如两个进程共享一个缓冲区</li>
 </ul>
@@ -394,18 +425,18 @@
 </ul>
 </li>
 <li><h2 id="经典的同步-互斥问题"><a href="#经典的同步-互斥问题" class="headerlink" title="经典的同步/互斥问题"></a>经典的同步/互斥问题</h2><ol>
-<li><h3 id="生产者－消费者问题"><a href="#生产者－消费者问题" class="headerlink" title="生产者－消费者问题"></a>生产者－消费者问题</h3><p>假定缓冲区buffer是一个有界缓冲区，可存放n个数据，同时假定有K个CP进程不断地产生数据，并送buffer；有m个IOP进程从缓冲区中取数据打印</p>
+<li><h2 id="生产者－消费者问题"><a href="#生产者－消费者问题" class="headerlink" title="生产者－消费者问题"></a>生产者－消费者问题</h2><p>假定缓冲区buffer是一个有界缓冲区，可存放n个数据，同时假定有K个CP进程不断地产生数据，并送buffer；有m个IOP进程从缓冲区中取数据打印</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> full = <span class="number">0</span>        <span class="comment">//缓冲区产品数目</span></span><br><span class="line"><span class="keyword">int</span> empty = n       <span class="comment">//缓冲区可存放的产品的空位</span></span><br><span class="line"><span class="keyword">int</span> mutex = <span class="number">1</span>       <span class="comment">//对缓冲区互斥信号灯</span></span><br><span class="line"></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    cobegin</span><br><span class="line">        producer();</span><br><span class="line">        consumer();</span><br><span class="line">    coend</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">producer()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(生产未完成)</span><br><span class="line">    &#123;</span><br><span class="line">        ……;</span><br><span class="line">        生产一个产品;</span><br><span class="line">        p(empty);</span><br><span class="line">        p(mutex);</span><br><span class="line">        将产品放入缓冲区;</span><br><span class="line">        v(mutex);</span><br><span class="line">        v(full);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">consumer()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(还要继续消费)</span><br><span class="line">    &#123;</span><br><span class="line">        p(full);</span><br><span class="line">        p(mutex);</span><br><span class="line">        从缓冲区取出一个产品;</span><br><span class="line">        v(mutex);</span><br><span class="line">        v(empty);</span><br><span class="line">        消费一个产品;</span><br><span class="line">        ……;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h3 id="读者和写者问题"><a href="#读者和写者问题" class="headerlink" title="读者和写者问题"></a>读者和写者问题</h3><p>有十个读者和两个编辑同时处理一篇文章，对于读操作是可以同时进行的，若有读者正在读这篇文章，编辑就不能工作，若编辑正在处理这篇文章，读者就不能作读操作，编辑与编辑的工作也是互斥的，试用信号灯及P、V操作写出读者与编辑之间协同工作的程序描述</p>
+<li><h2 id="读者和写者问题"><a href="#读者和写者问题" class="headerlink" title="读者和写者问题"></a>读者和写者问题</h2><p>有十个读者和两个编辑同时处理一篇文章，对于读操作是可以同时进行的，若有读者正在读这篇文章，编辑就不能工作，若编辑正在处理这篇文章，读者就不能作读操作，编辑与编辑的工作也是互斥的，试用信号灯及P、V操作写出读者与编辑之间协同工作的程序描述</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> mutex = <span class="number">1</span>;     <span class="comment">//读者与编辑，编辑与编辑的互斥信号灯</span></span><br><span class="line"><span class="keyword">int</span> mutex1 = <span class="number">1</span>;    <span class="comment">//对count操作的互斥信号灯</span></span><br><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">reader()</span><br><span class="line">&#123;</span><br><span class="line">    p(mutex1);</span><br><span class="line">    <span class="keyword">if</span>(count == <span class="number">0</span>) <span class="comment">//若该进程是第一个读文章</span></span><br><span class="line">        p(mutex);</span><br><span class="line">    count++;</span><br><span class="line">    v(mutex1);</span><br><span class="line">    读文章;</span><br><span class="line">    p(mutex1);</span><br><span class="line">    count--;</span><br><span class="line">    <span class="keyword">if</span>(count == <span class="number">0</span>) <span class="comment">//若该进程是最后一个读完文章</span></span><br><span class="line">        v(mutex);</span><br><span class="line">    v(mutex1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">editor()</span><br><span class="line">&#123;</span><br><span class="line">    p(mutex);</span><br><span class="line">    编辑文章;</span><br><span class="line">    v(mutex);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><h3 id="理发师睡觉问题"><a href="#理发师睡觉问题" class="headerlink" title="理发师睡觉问题"></a>理发师睡觉问题</h3><p>理发店里有一位理发师、一把理发椅和n把供顾客等候理发坐的椅子。如果没有顾客，则理发师便在理发椅上睡觉，当一顾客来到时，他必须先叫醒理发师，如果理发师正在理发时又有顾客来到，则如果有空椅子可坐，他们就坐下来等，如果没有空椅子，他就离开。用信号灯和P、V操作写出理发师和顾客行为的程序描述。</p>
+<li><h2 id="理发师睡觉问题"><a href="#理发师睡觉问题" class="headerlink" title="理发师睡觉问题"></a>理发师睡觉问题</h2><p>理发店里有一位理发师、一把理发椅和n把供顾客等候理发坐的椅子。如果没有顾客，则理发师便在理发椅上睡觉，当一顾客来到时，他必须先叫醒理发师，如果理发师正在理发时又有顾客来到，则如果有空椅子可坐，他们就坐下来等，如果没有空椅子，他就离开。用信号灯和P、V操作写出理发师和顾客行为的程序描述。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> chair = n;</span><br><span class="line"><span class="keyword">int</span> customer = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> barber = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> mutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">barber()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p(customer);</span><br><span class="line">        理发;</span><br><span class="line">        p(mutex);</span><br><span class="line">        chair++;</span><br><span class="line">        v(barber);</span><br><span class="line">        v(mutex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">customer()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        p(mutex);</span><br><span class="line">        <span class="keyword">if</span>(chair == <span class="number">0</span>)</span><br><span class="line">            离开;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            chair--;</span><br><span class="line">            v(customer);</span><br><span class="line">        &#125;</span><br><span class="line">        v(mutex);</span><br><span class="line">        p(barber);</span><br><span class="line">        理发;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ul>
-<li><h3 id="哲学家就餐问题"><a href="#哲学家就餐问题" class="headerlink" title="哲学家就餐问题"></a>哲学家就餐问题</h3><ul>
+<li><h2 id="哲学家就餐问题"><a href="#哲学家就餐问题" class="headerlink" title="哲学家就餐问题"></a>哲学家就餐问题</h2><ul>
 <li>五个哲学家围坐在一个园桌周围，每个哲学家面前都有一盘通心面，由于面条很滑，所以要两把叉子才能夹住。相邻两个盘子间有一把叉子</li>
 <li>哲学家的生活包括两种活动：即吃面条和思考。当哲学家觉得饿时，他就试图分两次去取他左边和右边的叉子，每次拿一把，不分先后次序，如果成功，他就开始吃面条，吃完后放下叉子，继续思考。试用信号灯及P、V操作写出哲学家行为的程序描述，要求不能让某个（或某些哲学家饿死）</li>
 </ul>
@@ -455,6 +486,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/04/GOOGLE高级搜索技巧/" rel="prev" title="GOOGLE高级搜索技巧">
+                GOOGLE高级搜索技巧 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -535,7 +570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -546,7 +581,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -557,7 +592,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -606,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进程互斥和同步"><span class="nav-number">1.</span> <span class="nav-text">进程互斥和同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#临界区和临界资源"><span class="nav-number">1.1.</span> <span class="nav-text">临界区和临界资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么叫临界区-critical-section-？"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么叫临界区(critical section) ？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与时间有关的错误"><span class="nav-number">1.1.2.</span> <span class="nav-text">与时间有关的错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么叫互斥？"><span class="nav-number">1.1.3.</span> <span class="nav-text">什么叫互斥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#临界区调度原则"><span class="nav-number">1.1.4.</span> <span class="nav-text">临界区调度原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现临界区的软件算法Peterson算法"><span class="nav-number">1.1.5.</span> <span class="nav-text">实现临界区的软件算法Peterson算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程互斥"><span class="nav-number">1.2.</span> <span class="nav-text">进程互斥</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#锁和上锁、开锁操作"><span class="nav-number">1.2.1.</span> <span class="nav-text">锁和上锁、开锁操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号灯和P、V操作"><span class="nav-number">1.3.</span> <span class="nav-text">信号灯和P、V操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#信号灯-semaphore-的概念"><span class="nav-number">1.3.1.</span> <span class="nav-text">信号灯(semaphore)的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信号灯的定义"><span class="nav-number">1.3.2.</span> <span class="nav-text">信号灯的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#P、V操作"><span class="nav-number">1.3.3.</span> <span class="nav-text">P、V操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#P操作"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">P操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#V操作"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">V操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程同步"><span class="nav-number">1.4.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步"><span class="nav-number">1.4.1.</span> <span class="nav-text">同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经典的同步-互斥问题"><span class="nav-number">1.5.</span> <span class="nav-text">经典的同步/互斥问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生产者－消费者问题"><span class="nav-number">1.5.1.</span> <span class="nav-text">生产者－消费者问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读者和写者问题"><span class="nav-number">1.5.2.</span> <span class="nav-text">读者和写者问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理发师睡觉问题"><span class="nav-number">1.5.3.</span> <span class="nav-text">理发师睡觉问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哲学家就餐问题"><span class="nav-number">1.5.4.</span> <span class="nav-text">哲学家就餐问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构化的同步-互斥机构-管程"><span class="nav-number">1.6.</span> <span class="nav-text">结构化的同步/互斥机构-管程</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#临界区和临界资源"><span class="nav-number">1.</span> <span class="nav-text">临界区和临界资源</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么叫临界区-critical-section-？"><span class="nav-number">1.1.</span> <span class="nav-text">什么叫临界区(critical section) ？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与时间有关的错误"><span class="nav-number">1.2.</span> <span class="nav-text">与时间有关的错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么叫互斥？"><span class="nav-number">1.3.</span> <span class="nav-text">什么叫互斥？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#临界区调度原则"><span class="nav-number">1.4.</span> <span class="nav-text">临界区调度原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现临界区的软件算法Peterson算法"><span class="nav-number">1.5.</span> <span class="nav-text">实现临界区的软件算法Peterson算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程互斥"><span class="nav-number">2.</span> <span class="nav-text">进程互斥</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#锁和上锁、开锁操作"><span class="nav-number">2.1.</span> <span class="nav-text">锁和上锁、开锁操作</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信号灯和P、V操作"><span class="nav-number">3.</span> <span class="nav-text">信号灯和P、V操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#信号灯-semaphore-的概念"><span class="nav-number">3.1.</span> <span class="nav-text">信号灯(semaphore)的概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信号灯的定义"><span class="nav-number">3.2.</span> <span class="nav-text">信号灯的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#P、V操作"><span class="nav-number">3.3.</span> <span class="nav-text">P、V操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#P操作"><span class="nav-number">3.3.1.</span> <span class="nav-text">P操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#V操作"><span class="nav-number">3.3.2.</span> <span class="nav-text">V操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程同步"><span class="nav-number">4.</span> <span class="nav-text">进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同步"><span class="nav-number">4.1.</span> <span class="nav-text">同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经典的同步-互斥问题"><span class="nav-number">4.2.</span> <span class="nav-text">经典的同步/互斥问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产者－消费者问题"><span class="nav-number">4.3.</span> <span class="nav-text">生产者－消费者问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#读者和写者问题"><span class="nav-number">4.4.</span> <span class="nav-text">读者和写者问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理发师睡觉问题"><span class="nav-number">4.5.</span> <span class="nav-text">理发师睡觉问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哲学家就餐问题"><span class="nav-number">4.6.</span> <span class="nav-text">哲学家就餐问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结构化的同步-互斥机构-管程"><span class="nav-number">4.7.</span> <span class="nav-text">结构化的同步/互斥机构-管程</span></a></li></ol></li></ol></div>
             
 
           </div>

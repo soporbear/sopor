@@ -79,15 +79,18 @@
 
 
 
+<meta name="description" content="sqlmap基本参数123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384        ___       __H__ ___ ___">
 <meta name="keywords" content="SQL注入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sqlmap使用说明">
+<meta property="og:title" content="sqlmap基本使用说明">
 <meta property="og:url" content="http://yoursite.com/2018/06/05/sqlmap使用说明/index.html">
 <meta property="og:site_name" content="Lilin">
+<meta property="og:description" content="sqlmap基本参数123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384        ___       __H__ ___ ___">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-05T07:29:06.509Z">
+<meta property="og:updated_time" content="2018-07-03T12:40:07.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sqlmap使用说明">
+<meta name="twitter:title" content="sqlmap基本使用说明">
+<meta name="twitter:description" content="sqlmap基本参数123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384        ___       __H__ ___ ___">
 
 
 
@@ -123,7 +126,7 @@
 
 
 
-  <title>sqlmap使用说明 | Lilin</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>sqlmap基本使用说明 | Lilin</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -267,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">sqlmap使用说明</h1>
+          <h1 class="post-title" itemprop="name headline">sqlmap基本使用说明</h1>
         
 
         <div class="post-meta">
@@ -317,7 +320,7 @@
       
 
       
-        
+        <h1 id="sqlmap基本参数"><a href="#sqlmap基本参数" class="headerlink" title="sqlmap基本参数"></a>sqlmap基本参数</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">        ___</span><br><span class="line">       __H__</span><br><span class="line"> ___ ___[(]_____ ___ ___  &#123;1.2.3#stable&#125;</span><br><span class="line">|_ -| . [&quot;]     | .&apos;| . |</span><br><span class="line">|___|_  [)]_|_|_|__,|  _|</span><br><span class="line">      |_|V          |_|   http://sqlmap.org</span><br><span class="line"></span><br><span class="line">Usage: python sqlmap [options]</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  -h, --help            显示基本的帮助信息</span><br><span class="line">  -hh                   显示高级帮助信息</span><br><span class="line">  --version             显示sqlmap版本信息</span><br><span class="line">  -v VERBOSE            输出信息的详细级别：0-6（默认为1）</span><br><span class="line"></span><br><span class="line">  Target:</span><br><span class="line">    至少要有一个Target参数来确定攻击目标</span><br><span class="line"></span><br><span class="line">    -u URL, --url=URL   目标 URL (e.g. &quot;http://www.site.com/vuln.php?id=1&quot;)</span><br><span class="line">    -g GOOGLEDORK       用Google Dork的搜索结果作为目标URL</span><br><span class="line"></span><br><span class="line">  Request:</span><br><span class="line">    以下选项用来确定如何连接到目标URL</span><br><span class="line"></span><br><span class="line">    --data=DATA         要通过POST方法发送的数据</span><br><span class="line">    --cookie=COOKIE     要发送的Cookie数据</span><br><span class="line">    --random-agent      使用随机选择的User-Agent值</span><br><span class="line">    --proxy=PROXY       使用代理</span><br><span class="line">    --tor               使用洋葱网络</span><br><span class="line">    --check-tor         检查是否能使用洋葱网络</span><br><span class="line"></span><br><span class="line">  Injection:</span><br><span class="line"></span><br><span class="line">    -p TESTPARAMETER    选择测试的参数</span><br><span class="line">    --dbms=DBMS         指定目标的数据库</span><br><span class="line"></span><br><span class="line">  Detection:</span><br><span class="line"></span><br><span class="line">    --level=LEVEL       指定检测级别 (1-5, 默认为 1)</span><br><span class="line">    --risk=RISK         指定风险级别 (1-3, 默认为 1)</span><br><span class="line"></span><br><span class="line">  Techniques:</span><br><span class="line">    以下选项用来调整注入时使用的技术</span><br><span class="line"></span><br><span class="line">    --technique=TECH    指定注入类型 (默认 &quot;BEUSTQ&quot;)</span><br><span class="line">    B：Boolean-based blind（布尔型注入）</span><br><span class="line">    E：Error-based（报错型注入）</span><br><span class="line">    U：Union query-based（可联合查询注入）</span><br><span class="line">    S：Stacked queries（可多语句查询注入）</span><br><span class="line">    T：Time-based blind（基于时间延迟注入）</span><br><span class="line">    Q：Inline queries（嵌套查询注入）</span><br><span class="line"></span><br><span class="line">  Enumeration:</span><br><span class="line">    以下选项用来列举数据库表中的信息，可以自定义sql语句</span><br><span class="line"></span><br><span class="line">    -a, --all           检索所有</span><br><span class="line">    -b, --banner        检索数据库名和版本</span><br><span class="line">    --current-user      检索当前用户</span><br><span class="line">    --current-db        检索当前数据库</span><br><span class="line">    --passwords         列举出用户密码的hash值</span><br><span class="line">    --tables            列举出数据库表名</span><br><span class="line">    --columns           列举出数据库列名</span><br><span class="line">    --schema            列举出数据库模式</span><br><span class="line">    --dump              列举表中的数据</span><br><span class="line">    --dump-all          列举所有表中的数据</span><br><span class="line">    -D DB               要列举的数据库</span><br><span class="line">    -T TBL              要列举的表</span><br><span class="line">    -C COL              要列举的列</span><br><span class="line"></span><br><span class="line">  Operating system access:</span><br><span class="line">    以下选项用来访问操作系统</span><br><span class="line"></span><br><span class="line">    --os-shell          模拟出一个交互式shell</span><br><span class="line">    --os-pwn            模拟出一个OOB shell</span><br><span class="line"></span><br><span class="line">  General:</span><br><span class="line">    以下选项用来设置一些通用工作参数</span><br><span class="line"></span><br><span class="line">    --batch             不提示输入，所有输入总是选择默认值</span><br><span class="line">    --flush-session     刷新会话文件</span><br><span class="line"></span><br><span class="line">  Miscellaneous:</span><br><span class="line">    --sqlmap-shell      提供一个可交互式的sqlmap shell</span><br><span class="line">    --wizard            给初学者的向导程序</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -411,8 +414,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -431,7 +443,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -442,7 +454,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -453,7 +465,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -492,6 +504,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sqlmap基本参数"><span class="nav-number">1.</span> <span class="nav-text">sqlmap基本参数</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
